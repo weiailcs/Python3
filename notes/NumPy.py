@@ -31,6 +31,9 @@ np.median(a)
 np.ones([2, 3])
 
 c = np.reshape(a, [3, 1])
+# [[1. ]
+#  [2.1]
+#  [1.5]]
 
 np.save('test.npy', a)
 
@@ -38,5 +41,5 @@ np.where(a, 1, 2)
 # [1 1 1]
 np.where(a == 1.5, 1, 2)
 # [2 2 1]
-print(np.where(a > 1))
+np.where(a > 1)
 # (array([1, 2], dtype=int64),)
