@@ -41,7 +41,23 @@ def g(X):
     return (x - 1) ** 4 + 5 * (y - 1) ** 2 - 2 * x * y
 
 
+X_opt = opt.minimize(g, (8, 3)).x
 fig, ax = plt.subplots(figsize=(6, 4))
-x_, y_ = np.linspace(-1, 4, 100)
-X,Y=np.meshgrid(x_,y_)
+x_ = y_ = np.linspace(-1, 4, 100)
+X, Y = np.meshgrid(x_, y_)
+c = ax.contour(X, Y, g((X, Y)), 50)
+ax.plot(X_opt[0], X_opt[1], 'r*', markersize=15)
+plt.colorbar(c, ax=ax)
+fig.tight_layout()
+plt.savefig('2.pdf', format='pdf')
+plt.show()
+
+N = 200
+m_true = 2
+b_true = -1
+dy = 2.0
+np.random.randn(1234567)
+xdata = 10 * np.random.random(N)
+ydata = np.random.normal(b_true + m_true * xdata, dy)
+plt.errorbar(xdata, ydata, dy, fmt='.b')
 plt.show()
