@@ -19,3 +19,8 @@ df = pd.DataFrame(a)
 # 1 -0.234153 -0.234137  1.579213  0.767435
 # 2 -0.469474  0.542560       NaN -0.465730
 df.to_csv('pd.csv', float_format='%.2f', na_rep='NAN!')
+
+path = 'data2.csv'
+f = open(path)
+b = pd.read_csv(f)
+b.head(7)
