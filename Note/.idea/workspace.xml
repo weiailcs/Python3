@@ -24,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Stock Market Analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="114">
               <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding>
                 <element signature="e#15#46#0" expanded="true" />
@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pandas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="437">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://D:/Code/Python3/Lib/site-packages/pandas/io/parsers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="690" column="42" lean-forward="true" selection-start-line="690" selection-start-column="42" selection-end-line="690" selection-end-column="42" />
+            <state relative-caret-position="12293">
+              <caret line="690" column="42" selection-start-line="690" selection-start-column="42" selection-end-line="690" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -195,6 +195,9 @@
       <module name="Note" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -309,16 +312,18 @@
       <workItem from="1548226398619" duration="13773000" />
       <workItem from="1548338652741" duration="8000" />
       <workItem from="1548338678171" duration="1949000" />
+      <workItem from="1548660901369" duration="25000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20304000" />
+    <option name="totallyTimeSpent" value="20329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15031983" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15191898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -339,7 +344,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" sideWeight="0.4989605" weight="0.4067164" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" sideWeight="0.5010395" side_tool="true" weight="0.25266525" />
+      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" sideWeight="0.5010395" side_tool="true" visible="true" weight="0.25266525" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15031983" />
@@ -438,7 +443,7 @@
     <entry file="file://$PROJECT_DIR$/test.ipynb" />
     <entry file="file://$PROJECT_DIR$/Stock Market Analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="114">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
           <folding>
             <element signature="e#15#46#0" expanded="true" />
@@ -455,15 +460,15 @@
     </entry>
     <entry file="file://D:/Code/Python3/Lib/site-packages/pandas/io/parsers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="690" column="42" lean-forward="true" selection-start-line="690" selection-start-column="42" selection-end-line="690" selection-end-column="42" />
+        <state relative-caret-position="12293">
+          <caret line="690" column="42" selection-start-line="690" selection-start-column="42" selection-end-line="690" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pandas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="437">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
