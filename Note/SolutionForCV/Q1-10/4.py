@@ -21,3 +21,4 @@ cv2.imshow('result3', th3)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
