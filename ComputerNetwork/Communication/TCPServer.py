@@ -4,7 +4,7 @@ import socket as sk
 import threading as tr
 
 con = tr.Condition
-server_ip_address = '192.168.146.128'
+server_ip_address = ''
 port_number = 8484
 data = ''
 

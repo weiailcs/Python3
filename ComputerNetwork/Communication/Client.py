@@ -26,8 +26,8 @@ def receive_data(sock):
 
 nick_name = input("input your nick name: ")
 # server_ip_address = input("input server ip address: ")
-server_ip_address = '192.168.146.128'
-port_number = 8484
+server_ip_address = '66.42.71.214'
+port_number = 58882
 
 sock = sk.socket(sk.AF_INET, sk.SOCK_STREAM)  # 创建套接字，默认为ipv4
 sock.connect((server_ip_address, port_number))  # 发起连接服务请求，发出的是一个元组
