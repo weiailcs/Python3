@@ -26,23 +26,21 @@
 (1) 未登录：07:01
 '''
 
+# 20171001091
+# 123456
+
 import wx
 import socket as sk
-
-host = ('', 21568)
-server = ('202.114.196.97', 21568)
-client_socket = sk.socket(sk.AF_INET, sk.SOCK_DGRAM)
-client_socket.bind(host)
-
-a = '02#20171001091#123456#'
-client_socket.sendto(a.encode(), server)
-b = client_socket.recv(1024).decode()
-print(b)
-
-a = '06#'
-client_socket.sendto(a.encode(), server)
-b = client_socket.recv(1024).decode()
-print(b)
+from GUI import *
 
 if __name__ == '__main__':
-    pass
+    app = wx.App()
+    log_in = LoginFrame()
+    app.MainLoop()
+    if log_in.status:
+        friend_list = FriendListFrame()
+        app.MainLoop()
+
+    # 注销
+    client_socket.sendto('06#'.encode(), server)
+    print(client_socket.recv(1024).decode())
