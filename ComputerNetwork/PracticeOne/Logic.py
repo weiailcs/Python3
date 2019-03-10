@@ -38,7 +38,7 @@ if __name__ == '__main__':
     log_in = LoginFrame()
     app.MainLoop()
     if log_in.status:
-        friend_list = FriendListFrame()
+        friend_list = FriendListFrame(user_name=log_in.user_name, pass_word=log_in.pass_word)
         app.MainLoop()
 
     # 注销

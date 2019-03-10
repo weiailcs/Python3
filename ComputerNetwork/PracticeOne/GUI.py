@@ -42,6 +42,7 @@ class LoginFrame(wx.Frame):
         self.UserName = wx.TextCtrl(log_in_size.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
                                     wx.DefaultSize, 0)
         self.UserName.SetMinSize(wx.Size(120, 24))
+        self.UserName.SetValue('20171001091')
 
         g_sizer_1.Add(self.UserName, 0, wx.ALL, 5)
 
@@ -73,6 +74,7 @@ class LoginFrame(wx.Frame):
         self.Show()
 
     def __del__(self):
+        print('登录窗口 Destroy')
         pass
 
     def log_in_check(self):
@@ -109,6 +111,7 @@ class LoginFrame(wx.Frame):
         self.user_name = self.UserName.GetValue()
         self.pass_word = self.PassWord.GetValue()
         self.log_in_check()
+        event.Skip()
 
 
 ###########################################################################
@@ -117,8 +120,10 @@ class LoginFrame(wx.Frame):
 
 class FriendListFrame(wx.Frame):
 
-    def __init__(self, parent=None):
-        self.user_name = ''
+    def __init__(self, parent=None, user_name='', pass_word='123456'):
+        self.user_name = user_name
+        self.pass_word = pass_word
+        self.friend_name = ''
 
         #####################################################################
 
@@ -164,27 +169,26 @@ class FriendListFrame(wx.Frame):
     # Virtual event handlers, overide them in your derived class
     def button_1_clicked(self, event):
         print('button_1_clicked')
-        self.user_name = self.button_1.LabelText
-        self.chat_dialog = ChatFrame(title=self.user_name[-12:-1], label=self.user_name[:-13])
-        # chat_dialog.Destroy()
+        self.friend_name = self.button_1.LabelText
+        ChatFrame(title=self.friend_name[-12:-1], label=self.friend_name[:-13])
         event.Skip()
 
     def button_2_clicked(self, event):
         print('button_2_clicked')
-        self.user_name = self.button_1.LabelText
-        self.chat_dialog = ChatFrame(title=self.user_name[-12:-1], label=self.user_name[:-13])
-        # chat_dialog.Destroy()
+        self.friend_name = self.button_1.LabelText
+        ChatFrame(title=self.friend_name[-12:-1], label=self.friend_name[:-13])
         event.Skip()
 
     def button_3_clicked(self, event):
         print('button_3_clicked')
-        self.user_name = self.button_1.LabelText
-        self.chat_dialog = ChatFrame(title=self.user_name[-12:-1], label=self.user_name[:-13])
-        # chat_dialog.Destroy()
+        self.friend_name = self.button_1.LabelText
+        ChatFrame(title=self.friend_name[-12:-1], label=self.friend_name[:-13])
         event.Skip()
 
     def button_modify_clicked(self, event):
         print('button_modify_clicked')
+        print(self.user_name)
+        ModifyFrame(user_name=self.user_name, pass_word=self.pass_word)
         event.Skip()
 
 
@@ -196,14 +200,14 @@ class ChatFrame(wx.Frame):
 
     def __init__(self, parent=None, title=wx.EmptyString, label='USER'):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=title, pos=wx.DefaultPosition,
-                           size=wx.Size(400, 450), style=wx.DEFAULT_DIALOG_STYLE)
+                          size=wx.Size(400, 450), style=wx.DEFAULT_DIALOG_STYLE)
 
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
         ChatSizer = wx.StaticBoxSizer(wx.StaticBox(self, wx.ID_ANY, label), wx.VERTICAL)
 
         self.in_textCtrl = wx.TextCtrl(ChatSizer.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
-                                       wx.Size(400, 300), 0)
+                                       wx.Size(400, 300), style=wx.TE_READONLY)
         ChatSizer.Add(self.in_textCtrl, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
 
         SendSizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -233,11 +237,104 @@ class ChatFrame(wx.Frame):
 
     # Virtual event handlers, overide them in your derived class
     def send_button_clicked(self, event):
+        print('消息发送')
+        event.Skip()
+
+
+###########################################################################
+## Class ModifyFrame
+###########################################################################
+
+class ModifyFrame(wx.Frame):
+
+    def __init__(self, parent=None, user_name='', pass_word=''):
+        self.user_name = user_name
+        self.pass_word = pass_word
+        self.status = False
+
+        ############################################
+
+        wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=wx.EmptyString, pos=wx.DefaultPosition,
+                          size=wx.Size(300, 200), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
+
+        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
+
+        ModifySize = wx.StaticBoxSizer(wx.StaticBox(self, wx.ID_ANY, u"修改密码"), wx.VERTICAL)
+
+        ModifySize.SetMinSize(wx.Size(300, 150))
+        ModifySizer = wx.GridSizer(0, 2, 0, 0)
+
+        self.PassWordText = wx.StaticText(ModifySize.GetStaticBox(), wx.ID_ANY, u"密码", wx.DefaultPosition,
+                                          wx.DefaultSize, 0)
+        self.PassWordText.Wrap(-1)
+        ModifySizer.Add(self.PassWordText, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
+
+        self.PassWord = wx.TextCtrl(ModifySize.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                    wx.DefaultSize, 0)
+        self.PassWord.SetMinSize(wx.Size(120, 24))
+
+        ModifySizer.Add(self.PassWord, 0, wx.ALL, 5)
+
+        self.CheckPassWordText = wx.StaticText(ModifySize.GetStaticBox(), wx.ID_ANY, u"确认密码", wx.DefaultPosition,
+                                               wx.DefaultSize, 0)
+        self.CheckPassWordText.Wrap(-1)
+        ModifySizer.Add(self.CheckPassWordText, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
+
+        self.CheckPassWord = wx.TextCtrl(ModifySize.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                         wx.DefaultSize, 0)
+        self.CheckPassWord.SetMinSize(wx.Size(120, 24))
+
+        ModifySizer.Add(self.CheckPassWord, 0, wx.ALL, 5)
+
+        ModifySize.Add(ModifySizer, 1, wx.EXPAND, 5)
+
+        self.Accept = wx.Button(ModifySize.GetStaticBox(), wx.ID_ANY, u"确定", wx.DefaultPosition, wx.DefaultSize, 0)
+        ModifySize.Add(self.Accept, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
+
+        self.SetSizer(ModifySize)
+        self.Layout()
+
+        self.Centre(wx.BOTH)
+
+        # Connect Events
+        self.Accept.Bind(wx.EVT_BUTTON, self.submmit)
+
+        self.Show()
+
+    def __del__(self):
+        print('修改密码窗口 Destroy')
+        pass
+
+    def modify_check(self):
+        new_pass_word = self.PassWord.GetValue()
+        check_new_pass_word = self.CheckPassWord.GetValue()
+
+        if '#' in self.user_name or '#' in self.pass_word:
+            wx.MessageBox('不可含#')
+        else:
+            out_string = '01#' + self.user_name + '#' + self.pass_word +'#'+ new_pass_word + '#' + check_new_pass_word + '#'
+            client_socket.sendto(out_string.encode(), server)
+            in_string = client_socket.recv(1024).decode()
+            print(in_string)
+
+            if in_string == '01:01':
+                wx.MessageBox('用户初始密码错误')
+            elif in_string == '01:02':
+                wx.MessageBox('两次密码不一致')
+            if in_string == '01:03':
+                wx.MessageBox('用户密码修改成功')
+                self.Close()
+            if in_string == '01:04':
+                wx.MessageBox('用户不存在')
+
+    # Virtual event handlers, overide them in your derived class
+    def submmit(self, event):
+        print('modify_button clicked')
+        self.modify_check()
         event.Skip()
 
 
 if __name__ == '__main__':
     app = wx.App()
-    # b = ChatFrame(title='222')
-    b = FriendListFrame()
+    b = ChatFrame()
     app.MainLoop()

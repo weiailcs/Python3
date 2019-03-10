@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb8396c7-a4f9-40f9-b17f-cfbcaeec2d09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ComputerNetwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ComputerNetwork.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeOne/LoginGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeOne/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeOne/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeOne/Logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/Logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wxPythonGUI/FakeQQGUI.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/../wxPythonGUI/FakeQQGUI.fbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wxPythonGUI/noname.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../wxPythonGUI/noname.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wxPythonGUI/noname.h" beforeDir="false" afterPath="$PROJECT_DIR$/../wxPythonGUI/noname.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,12 +16,12 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ComputerNetwork$Client.coverage" NAME="Client Coverage Results" MODIFIED="1551691017198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Communication" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$picture_download.coverage" NAME="picture_download Coverage Results" MODIFIED="1552048272464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1552152914506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1552200448092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$data_download.coverage" NAME="data_download Coverage Results" MODIFIED="1551937627773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$LoginGUI.coverage" NAME="LoginGUI Coverage Results" MODIFIED="1552121162029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Test.coverage" NAME="Test Coverage Results" MODIFIED="1552153563152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Test.coverage" NAME="Test Coverage Results" MODIFIED="1552200303400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$URLLIB.coverage" NAME="URLLIB Coverage Results" MODIFIED="1551937907171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Logic.coverage" NAME="Logic Coverage Results" MODIFIED="1552154170032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Logic.coverage" NAME="Logic Coverage Results" MODIFIED="1552194291807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$CrawTest.coverage" NAME="CrawTest Coverage Results" MODIFIED="1551687548121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
   </component>
   <component name="DatabaseView">
@@ -45,26 +42,26 @@
     <favorites_list name="ComputerNetwork" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.28175798">
+    <splitter split-orientation="horizontal" split-proportion="0.40048397">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+                <state relative-caret-position="616">
+                  <caret line="28" column="13" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="13" />
                   <folding>
-                    <element signature="e#25#34#0" expanded="true" />
+                    <element signature="e#326#335#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="250">
-                  <caret line="32" column="34" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="37" />
+                <state relative-caret-position="491">
+                  <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
                   <folding>
                     <element signature="e#302#311#0" expanded="true" />
                   </folding>
@@ -79,11 +76,36 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="538">
-                  <caret line="165" column="28" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
+                <state relative-caret-position="594">
+                  <caret line="239" column="19" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
                   <folding>
-                    <element signature="e#315#324#0" expanded="true" />
-                    <element signature="e#410#3770#0" />
+                    <element signature="e#204#279#0" />
+                    <element signature="e#410#3909#0" />
+                    <element signature="e#452#2673#0" />
+                    <element signature="e#2706#2740#0" />
+                    <element signature="e#2778#3605#0" />
+                    <element signature="e#2778#2806#1" />
+                    <element signature="e#3019#3605#0" />
+                    <element signature="e#3287#3372#0" />
+                    <element signature="e#3710#3909#0" />
+                    <element signature="e#3710#3740#1" />
+                    <element signature="e#3912#3987#0" />
+                    <element signature="e#4128#6987#0" />
+                    <element signature="e#4203#5971#0" />
+                    <element signature="e#6004#6037#0" />
+                    <element signature="e#6151#6328#0" />
+                    <element signature="e#6377#6554#0" />
+                    <element signature="e#6603#6780#0" />
+                    <element signature="e#6834#6987#0" />
+                    <element signature="e#6990#7065#0" />
+                    <element signature="e#8852#8927#0" />
+                    <element signature="e#9060#12440#0" />
+                    <element signature="e#9129#11323#0" />
+                    <element signature="e#11356#11392#0" />
+                    <element signature="e#11430#12256#0" />
+                    <element signature="e#11651#12256#0" />
+                    <element signature="e#12126#12180#0" />
+                    <element signature="e#12361#12440#0" />
                   </folding>
                 </state>
               </provider>
@@ -112,8 +134,8 @@
         <option value="$PROJECT_DIR$/crawler/data_download.py" />
         <option value="$PROJECT_DIR$/crawler/picture_download.py" />
         <option value="$PROJECT_DIR$/PracticeOne/LoginGUI.py" />
-        <option value="$PROJECT_DIR$/PracticeOne/Test.py" />
         <option value="$PROJECT_DIR$/PracticeOne/Logic.py" />
+        <option value="$PROJECT_DIR$/PracticeOne/Test.py" />
         <option value="$PROJECT_DIR$/PracticeOne/GUI.py" />
       </list>
     </option>
@@ -155,7 +177,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -169,8 +191,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Logic">
-    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.GUI">
+    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python">
       <module name="ComputerNetwork" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -282,9 +304,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Logic" />
         <item itemvalue="Python.Test" />
-        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.Logic" />
         <item itemvalue="Python.LoginGUI" />
         <item itemvalue="Python.picture_download" />
       </list>
@@ -308,23 +329,27 @@
       <workItem from="1552043860377" duration="4190000" />
       <workItem from="1552099779453" duration="2064000" />
       <workItem from="1552109469503" duration="11561000" />
-      <workItem from="1552134288919" duration="13308000" />
+      <workItem from="1552134288919" duration="16099000" />
+      <workItem from="1552193871486" duration="499000" />
+      <workItem from="1552194603239" duration="1182000" />
+      <workItem from="1552196657553" duration="1183000" />
+      <workItem from="1552200272959" duration="237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40842000" />
+    <option name="totallyTimeSpent" value="46734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43905637" visible="true" weight="0.114605546" />
-      <window_info id="Structure" order="1" sideWeight="0.56094366" side_tool="true" visible="true" weight="0.114605546" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43451142" visible="true" weight="0.11886994" />
+      <window_info id="Structure" order="1" sideWeight="0.5654886" side_tool="true" visible="true" weight="0.11886994" />
       <window_info id="Favorites" order="2" sideWeight="0.50127554" side_tool="true" weight="0.114605546" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32952183" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.2068607" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3191268" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -437,33 +462,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="e#326#335#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="32" column="34" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="37" />
+        <state relative-caret-position="491">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#302#311#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="165" column="28" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
+        <state relative-caret-position="594">
+          <caret line="239" column="19" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
           <folding>
-            <element signature="e#315#324#0" expanded="true" />
-            <element signature="e#410#3770#0" />
+            <element signature="e#204#279#0" />
+            <element signature="e#410#3909#0" />
+            <element signature="e#452#2673#0" />
+            <element signature="e#2706#2740#0" />
+            <element signature="e#2778#3605#0" />
+            <element signature="e#2778#2806#1" />
+            <element signature="e#3019#3605#0" />
+            <element signature="e#3287#3372#0" />
+            <element signature="e#3710#3909#0" />
+            <element signature="e#3710#3740#1" />
+            <element signature="e#3912#3987#0" />
+            <element signature="e#4128#6987#0" />
+            <element signature="e#4203#5971#0" />
+            <element signature="e#6004#6037#0" />
+            <element signature="e#6151#6328#0" />
+            <element signature="e#6377#6554#0" />
+            <element signature="e#6603#6780#0" />
+            <element signature="e#6834#6987#0" />
+            <element signature="e#6990#7065#0" />
+            <element signature="e#8852#8927#0" />
+            <element signature="e#9060#12440#0" />
+            <element signature="e#9129#11323#0" />
+            <element signature="e#11356#11392#0" />
+            <element signature="e#11430#12256#0" />
+            <element signature="e#11651#12256#0" />
+            <element signature="e#12126#12180#0" />
+            <element signature="e#12361#12440#0" />
           </folding>
         </state>
       </provider>
