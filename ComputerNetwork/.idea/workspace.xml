@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fb8396c7-a4f9-40f9-b17f-cfbcaeec2d09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication/Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Communication/Client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication/TCPServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Communication/TCPServer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PracticeOne/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PracticeOne/Logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/Logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wxPythonGUI/FakeQQGUI.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/../wxPythonGUI/FakeQQGUI.fbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeOne/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeOne/test.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,14 +17,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Client.coverage" NAME="Client Coverage Results" MODIFIED="1551691017198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Communication" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Client.coverage" NAME="Client Coverage Results" MODIFIED="1552224785662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Communication" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$picture_download.coverage" NAME="picture_download Coverage Results" MODIFIED="1552048272464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1552200448092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$TCPServer.coverage" NAME="TCPServer Coverage Results" MODIFIED="1552224783370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Communication" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1552242703914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$data_download.coverage" NAME="data_download Coverage Results" MODIFIED="1551937627773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$LoginGUI.coverage" NAME="LoginGUI Coverage Results" MODIFIED="1552121162029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Test.coverage" NAME="Test Coverage Results" MODIFIED="1552200303400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Test.coverage" NAME="Test Coverage Results" MODIFIED="1552241018859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$URLLIB.coverage" NAME="URLLIB Coverage Results" MODIFIED="1551937907171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Logic.coverage" NAME="Logic Coverage Results" MODIFIED="1552194291807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Logic.coverage" NAME="Logic Coverage Results" MODIFIED="1552243231563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$CrawTest.coverage" NAME="CrawTest Coverage Results" MODIFIED="1551687548121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
   </component>
   <component name="DatabaseView">
@@ -42,26 +46,35 @@
     <favorites_list name="ComputerNetwork" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40048397">
+    <splitter split-orientation="horizontal" split-proportion="0.27355623">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="616">
-                  <caret line="28" column="13" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="13" />
+                <state relative-caret-position="260">
+                  <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
                   <folding>
-                    <element signature="e#326#335#0" expanded="true" />
+                    <element signature="e#302#311#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Communication/Client.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="675">
+                  <caret line="38" selection-start-line="38" selection-end-line="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="491">
-                  <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+                <state relative-caret-position="117">
+                  <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
                   <folding>
                     <element signature="e#302#311#0" expanded="true" />
                   </folding>
@@ -76,36 +89,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="594">
-                  <caret line="239" column="19" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
+                <state relative-caret-position="250">
+                  <caret line="225" lean-forward="true" selection-start-line="225" selection-end-line="225" />
                   <folding>
-                    <element signature="e#204#279#0" />
-                    <element signature="e#410#3909#0" />
-                    <element signature="e#452#2673#0" />
-                    <element signature="e#2706#2740#0" />
-                    <element signature="e#2778#3605#0" />
-                    <element signature="e#2778#2806#1" />
-                    <element signature="e#3019#3605#0" />
-                    <element signature="e#3287#3372#0" />
-                    <element signature="e#3710#3909#0" />
-                    <element signature="e#3710#3740#1" />
-                    <element signature="e#3912#3987#0" />
-                    <element signature="e#4128#6987#0" />
-                    <element signature="e#4203#5971#0" />
-                    <element signature="e#6004#6037#0" />
-                    <element signature="e#6151#6328#0" />
-                    <element signature="e#6377#6554#0" />
-                    <element signature="e#6603#6780#0" />
-                    <element signature="e#6834#6987#0" />
-                    <element signature="e#6990#7065#0" />
-                    <element signature="e#8852#8927#0" />
-                    <element signature="e#9060#12440#0" />
-                    <element signature="e#9129#11323#0" />
-                    <element signature="e#11356#11392#0" />
-                    <element signature="e#11430#12256#0" />
-                    <element signature="e#11651#12256#0" />
-                    <element signature="e#12126#12180#0" />
-                    <element signature="e#12361#12440#0" />
+                    <element signature="e#25#34#0" expanded="true" />
+                    <element signature="e#494#4007#0" />
+                    <element signature="e#4010#4011#0" />
+                    <element signature="e#11396#14804#0" />
                   </folding>
                 </state>
               </provider>
@@ -122,6 +112,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>state</find>
+      <find>status</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -129,13 +125,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/crawler/CrawTest.py" />
-        <option value="$PROJECT_DIR$/Communication/Client.py" />
         <option value="$PROJECT_DIR$/crawler/URLLIB.py" />
         <option value="$PROJECT_DIR$/crawler/data_download.py" />
         <option value="$PROJECT_DIR$/crawler/picture_download.py" />
         <option value="$PROJECT_DIR$/PracticeOne/LoginGUI.py" />
-        <option value="$PROJECT_DIR$/PracticeOne/Logic.py" />
         <option value="$PROJECT_DIR$/PracticeOne/Test.py" />
+        <option value="$PROJECT_DIR$/Communication/TCPServer.py" />
+        <option value="$PROJECT_DIR$/Communication/Client.py" />
+        <option value="$PROJECT_DIR$/PracticeOne/Logic.py" />
         <option value="$PROJECT_DIR$/PracticeOne/GUI.py" />
       </list>
     </option>
@@ -153,7 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,12 +160,18 @@
             <path>
               <item name="ComputerNetwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComputerNetwork" type="462c0819:PsiDirectoryNode" />
+              <item name="Communication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComputerNetwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComputerNetwork" type="462c0819:PsiDirectoryNode" />
               <item name="PracticeOne" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +193,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GUI">
+  <component name="RunManager" selected="Python.Logic">
+    <configuration name="Client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ComputerNetwork" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Communication" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Communication/Client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python">
       <module name="ComputerNetwork" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -214,7 +238,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Logic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Logic" type="PythonConfigurationType" factoryName="Python">
       <module name="ComputerNetwork" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -258,6 +282,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="TCPServer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ComputerNetwork" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Communication" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Communication/TCPServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ComputerNetwork" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -280,34 +326,12 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="picture_download" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ComputerNetwork" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/picture_download.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Test" />
-        <item itemvalue="Python.Logic" />
+        <item itemvalue="Python.Client" />
+        <item itemvalue="Python.TCPServer" />
         <item itemvalue="Python.LoginGUI" />
-        <item itemvalue="Python.picture_download" />
       </list>
     </recent_temporary>
   </component>
@@ -333,24 +357,28 @@
       <workItem from="1552193871486" duration="499000" />
       <workItem from="1552194603239" duration="1182000" />
       <workItem from="1552196657553" duration="1183000" />
-      <workItem from="1552200272959" duration="237000" />
+      <workItem from="1552200272959" duration="5586000" />
+      <workItem from="1552206876880" duration="3135000" />
+      <workItem from="1552214122994" duration="242000" />
+      <workItem from="1552220403989" duration="5455000" />
+      <workItem from="1552227559222" duration="13758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46734000" />
+    <option name="totallyTimeSpent" value="74673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43451142" visible="true" weight="0.11886994" />
-      <window_info id="Structure" order="1" sideWeight="0.5654886" side_tool="true" visible="true" weight="0.11886994" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.58082974" visible="true" weight="0.12313433" />
+      <window_info id="Structure" order="1" sideWeight="0.41917023" side_tool="true" visible="true" weight="0.12313433" />
       <window_info id="Favorites" order="2" sideWeight="0.50127554" side_tool="true" weight="0.114605546" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32952183" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3191268" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.27338877" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -420,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Communication/Client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-338784280/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2867">
@@ -462,20 +483,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
+    <entry file="file://D:/Program/Code/Py/Lib/multiprocessing/spawn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="440">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Communication/TCPServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding>
-            <element signature="e#326#335#0" expanded="true" />
+            <element signature="e#22#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Communication/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="117">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#302#311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
           <folding>
             <element signature="e#302#311#0" expanded="true" />
           </folding>
@@ -484,36 +529,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="239" column="19" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
+        <state relative-caret-position="250">
+          <caret line="225" lean-forward="true" selection-start-line="225" selection-end-line="225" />
           <folding>
-            <element signature="e#204#279#0" />
-            <element signature="e#410#3909#0" />
-            <element signature="e#452#2673#0" />
-            <element signature="e#2706#2740#0" />
-            <element signature="e#2778#3605#0" />
-            <element signature="e#2778#2806#1" />
-            <element signature="e#3019#3605#0" />
-            <element signature="e#3287#3372#0" />
-            <element signature="e#3710#3909#0" />
-            <element signature="e#3710#3740#1" />
-            <element signature="e#3912#3987#0" />
-            <element signature="e#4128#6987#0" />
-            <element signature="e#4203#5971#0" />
-            <element signature="e#6004#6037#0" />
-            <element signature="e#6151#6328#0" />
-            <element signature="e#6377#6554#0" />
-            <element signature="e#6603#6780#0" />
-            <element signature="e#6834#6987#0" />
-            <element signature="e#6990#7065#0" />
-            <element signature="e#8852#8927#0" />
-            <element signature="e#9060#12440#0" />
-            <element signature="e#9129#11323#0" />
-            <element signature="e#11356#11392#0" />
-            <element signature="e#11430#12256#0" />
-            <element signature="e#11651#12256#0" />
-            <element signature="e#12126#12180#0" />
-            <element signature="e#12361#12440#0" />
+            <element signature="e#25#34#0" expanded="true" />
+            <element signature="e#494#4007#0" />
+            <element signature="e#4010#4011#0" />
+            <element signature="e#11396#14804#0" />
           </folding>
         </state>
       </provider>

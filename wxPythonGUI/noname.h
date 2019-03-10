@@ -53,6 +53,32 @@ class LoginFrame : public wxFrame
 };
 
 ///////////////////////////////////////////////////////////////////////////////
+/// Class ModifyFrame
+///////////////////////////////////////////////////////////////////////////////
+class ModifyFrame : public wxFrame 
+{
+	private:
+	
+	protected:
+		wxStaticText* PassWordText;
+		wxTextCtrl* PassWord;
+		wxStaticText* CheckPassWordText;
+		wxTextCtrl* CheckPassWord;
+		wxButton* Accept;
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void submmit( wxCommandEvent& event ) { event.Skip(); }
+		
+	
+	public:
+		
+		ModifyFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 300,200 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		
+		~ModifyFrame();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
 /// Class FriendListFrame
 ///////////////////////////////////////////////////////////////////////////////
 class FriendListFrame : public wxFrame 
@@ -100,6 +126,31 @@ class ChatDialog : public wxDialog
 		
 		ChatDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 579,545 ), long style = wxDEFAULT_DIALOG_STYLE ); 
 		~ChatDialog();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class MenuFrame
+///////////////////////////////////////////////////////////////////////////////
+class MenuFrame : public wxFrame 
+{
+	private:
+	
+	protected:
+		wxTextCtrl* friend_name;
+		wxButton* search_button;
+		wxButton* button_modify;
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void search_button_clicked( wxCommandEvent& event ) { event.Skip(); }
+		virtual void button_modify_clicked( wxCommandEvent& event ) { event.Skip(); }
+		
+	
+	public:
+		
+		MenuFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 470,297 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		
+		~MenuFrame();
 	
 };
 

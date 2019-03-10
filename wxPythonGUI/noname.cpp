@@ -61,6 +61,58 @@ LoginFrame::~LoginFrame()
 	
 }
 
+ModifyFrame::ModifyFrame( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	wxStaticBoxSizer* ModifySize;
+	ModifySize = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxT("修改密码") ), wxVERTICAL );
+	
+	ModifySize->SetMinSize( wxSize( 300,150 ) ); 
+	wxGridSizer* ModifySizer;
+	ModifySizer = new wxGridSizer( 0, 2, 0, 0 );
+	
+	PassWordText = new wxStaticText( ModifySize->GetStaticBox(), wxID_ANY, wxT("密码"), wxDefaultPosition, wxDefaultSize, 0 );
+	PassWordText->Wrap( -1 );
+	ModifySizer->Add( PassWordText, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
+	
+	PassWord = new wxTextCtrl( ModifySize->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	PassWord->SetMinSize( wxSize( 250,24 ) );
+	
+	ModifySizer->Add( PassWord, 0, wxALL, 5 );
+	
+	CheckPassWordText = new wxStaticText( ModifySize->GetStaticBox(), wxID_ANY, wxT("确认密码"), wxDefaultPosition, wxDefaultSize, 0 );
+	CheckPassWordText->Wrap( -1 );
+	ModifySizer->Add( CheckPassWordText, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
+	
+	CheckPassWord = new wxTextCtrl( ModifySize->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	CheckPassWord->SetMinSize( wxSize( 250,24 ) );
+	
+	ModifySizer->Add( CheckPassWord, 0, wxALL, 5 );
+	
+	
+	ModifySize->Add( ModifySizer, 1, wxEXPAND, 5 );
+	
+	Accept = new wxButton( ModifySize->GetStaticBox(), wxID_ANY, wxT("确定"), wxDefaultPosition, wxDefaultSize, 0 );
+	ModifySize->Add( Accept, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
+	
+	
+	this->SetSizer( ModifySize );
+	this->Layout();
+	
+	this->Centre( wxBOTH );
+	
+	// Connect Events
+	Accept->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ModifyFrame::submmit ), NULL, this );
+}
+
+ModifyFrame::~ModifyFrame()
+{
+	// Disconnect Events
+	Accept->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ModifyFrame::submmit ), NULL, this );
+	
+}
+
 FriendListFrame::FriendListFrame( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxSize( 240,600 ) );
@@ -127,7 +179,7 @@ ChatDialog::ChatDialog( wxWindow* parent, wxWindowID id, const wxString& title, 
 	SendSizer->Add( send_button, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
 	
 	
-	ChatSizer->Add( SendSizer, 1, wxEXPAND|wxALIGN_CENTER_HORIZONTAL, 5 );
+	ChatSizer->Add( SendSizer, 1, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
 	
 	this->SetSizer( ChatSizer );
@@ -143,5 +195,48 @@ ChatDialog::~ChatDialog()
 {
 	// Disconnect Events
 	send_button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ChatDialog::send_button_clicked ), NULL, this );
+	
+}
+
+MenuFrame::MenuFrame( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	wxBoxSizer* bSizer3;
+	bSizer3 = new wxBoxSizer( wxVERTICAL );
+	
+	bSizer3->SetMinSize( wxSize( 200,160 ) ); 
+	wxBoxSizer* bSizer4;
+	bSizer4 = new wxBoxSizer( wxHORIZONTAL );
+	
+	bSizer4->SetMinSize( wxSize( 200,160 ) ); 
+	friend_name = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer4->Add( friend_name, 0, wxALL, 5 );
+	
+	search_button = new wxButton( this, wxID_ANY, wxT("MyButton"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer4->Add( search_button, 0, wxALL, 5 );
+	
+	
+	bSizer3->Add( bSizer4, 1, wxEXPAND, 5 );
+	
+	button_modify = new wxButton( this, wxID_ANY, wxT("MyButton"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer3->Add( button_modify, 0, wxALL, 5 );
+	
+	
+	this->SetSizer( bSizer3 );
+	this->Layout();
+	
+	this->Centre( wxBOTH );
+	
+	// Connect Events
+	search_button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MenuFrame::search_button_clicked ), NULL, this );
+	button_modify->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MenuFrame::button_modify_clicked ), NULL, this );
+}
+
+MenuFrame::~MenuFrame()
+{
+	// Disconnect Events
+	search_button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MenuFrame::search_button_clicked ), NULL, this );
+	button_modify->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MenuFrame::button_modify_clicked ), NULL, this );
 	
 }

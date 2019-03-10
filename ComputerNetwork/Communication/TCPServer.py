@@ -33,4 +33,6 @@ print('连接建立\n')
 nick_name = connection.recv(1024)
 nick_name = nick_name.decode()
 tr.Thread(target=receive_data, args=(connection, nick_name)).start()
+
 tr.Thread(target=send_data, args=(connection, nick_name)).start()
+
