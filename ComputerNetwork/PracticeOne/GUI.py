@@ -304,7 +304,7 @@ class ChatFrame(wx.Frame):
                 out_string = '05#' + self.friend_number + '#'
                 client_socket.sendto(out_string.encode(), server)
                 in_string = client_socket.recv(1024).decode()
-                unread_text = in_string[35:-1]
+                unread_text = in_string[35:]
                 print(unread_text)
                 self.in_textCtrl.AppendText(self.friend_name + '：\n')
                 self.in_textCtrl.AppendText(unread_text + '\n')
