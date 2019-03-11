@@ -311,13 +311,8 @@ class ChatFrame(wx.Frame):
     # Virtual event handlers, overide them in your derived class
     def send_button_clicked(self, event):
         print('消息发送')
-        # self.status = False
-        # while self.t.is_alive():
-        #     pass
         self.out_massage = self.out_textCtrl.GetValue()
         self.send_message()
-        # self.t = tr.Thread(target=self.receive_message)
-        # self.t.start()
         event.Skip()
 
     def quit_button_clicked(self, event):
