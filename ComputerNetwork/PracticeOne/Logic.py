@@ -27,7 +27,7 @@
 '''
 
 # 20171001091
-
+# pyinstaller -F -w D:\Documents\codeFiles\Python3\ComputerNetwork\PracticeOne\Logic.py
 import wx
 import socket as sk
 from GUI import *

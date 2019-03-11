@@ -45,7 +45,6 @@ class LoginFrame(wx.Frame):
         self.UserName = wx.TextCtrl(log_in_size.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
                                     wx.DefaultSize, 0)
         self.UserName.SetMinSize(wx.Size(120, 24))
-        self.UserName.SetValue('20171003994')
 
         g_sizer_1.Add(self.UserName, 0, wx.ALL, 5)
 
@@ -57,7 +56,6 @@ class LoginFrame(wx.Frame):
         self.PassWord = wx.TextCtrl(log_in_size.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
                                     wx.DefaultSize, wx.TE_PASSWORD)
         self.PassWord.SetMinSize(wx.Size(120, 24))
-        self.PassWord.SetValue('12345678')
 
         g_sizer_1.Add(self.PassWord, 0, wx.ALL, 5)
 
@@ -271,7 +269,6 @@ class ChatFrame(wx.Frame):
 
         self.status = True
         self.t = tr.Thread(target=self.receive_message)
-        self.t.setDaemon(True)
         self.t.start()
 
     def __del__(self):
@@ -309,13 +306,18 @@ class ChatFrame(wx.Frame):
                 self.in_textCtrl.AppendText(self.friend_name + '：\n')
                 self.in_textCtrl.AppendText(unread_text + '\n')
                 unread = unread - 1
-            time.sleep(10)
+            time.sleep(30)
 
     # Virtual event handlers, overide them in your derived class
     def send_button_clicked(self, event):
         print('消息发送')
+        # self.status = False
+        # while self.t.is_alive():
+        #     pass
         self.out_massage = self.out_textCtrl.GetValue()
         self.send_message()
+        # self.t = tr.Thread(target=self.receive_message)
+        # self.t.start()
         event.Skip()
 
     def quit_button_clicked(self, event):
@@ -351,6 +353,7 @@ class MenuFrame(wx.Frame):
         bSizer4.SetMinSize(wx.Size(200, 160))
         self.friend_name_ctrl = wx.TextCtrl(self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
         bSizer4.Add(self.friend_name_ctrl, 1, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
+        self.friend_name_ctrl.SetValue('请输入联系人的姓名或者学号')
 
         self.search_button = wx.Button(self, wx.ID_ANY, u"确定", wx.DefaultPosition, wx.DefaultSize, 0)
         bSizer4.Add(self.search_button, 1, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
@@ -375,18 +378,22 @@ class MenuFrame(wx.Frame):
         pass
 
     def find_number(self):
-        data = xlrd.open_workbook('2017.xlsx')
-        table = data.sheet_by_index(0)
-        # print(str(table.col(0)[1])[6:-1])
-        for i in range(table.nrows):
-            if table.col(1)[i].value == self.friend_name:
-                self.friend_number = str(table.col(0)[i])[6:-1]
-                if str(self.friend_number) == str(self.user_name):
-                    wx.MessageBox('不能联系自己')
-                    return False
-                return True
-        wx.MessageBox('查无此人')
-        return False
+        try:
+            data = xlrd.open_workbook('2017.xlsx')
+            table = data.sheet_by_index(0)
+            for i in range(table.nrows):
+                if table.col(1)[i].value == self.friend_name or table.col(0)[i].value == self.friend_name:
+                    self.friend_number = str(table.col(0)[i])[6:-1]
+                    self.friend_name = str(table.col(1)[i])[6:-1]
+                    if str(self.friend_number) == str(self.user_name):
+                        wx.MessageBox('不能联系自己')
+                        return False
+                    return True
+            wx.MessageBox('查无此人')
+            return False
+        except IOError:
+            wx.MessageBox('2017.xlsx 无法打开')
+            return False
 
     # Virtual event handlers, overide them in your derived class
     def search_button_clicked(self, event):
