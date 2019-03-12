@@ -91,7 +91,6 @@ class LoginFrame(wx.Frame):
             client_socket.sendto(out_string.encode(), server)
             in_string = client_socket.recv(1024).decode()
             print(in_string)
-
             if in_string == '02:01':
                 self.status = True
                 wx.MessageBox('登录成功')
@@ -502,5 +501,5 @@ class ModifyFrame(wx.Frame):
 
 if __name__ == '__main__':
     app = wx.App()
-    b = ChatFrame()
+    b = MenuFrame()
     app.MainLoop()

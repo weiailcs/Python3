@@ -39,7 +39,7 @@ if __name__ == '__main__':
     if log_in.status:
         friend_list = MenuFrame(user_name=log_in.user_name, pass_word=log_in.pass_word)
         app.MainLoop()
+        # 注销
+        client_socket.sendto('06#'.encode(), server)
+        print(client_socket.recv(1024).decode())
 
-    # 注销
-    client_socket.sendto('06#'.encode(), server)
-    print(client_socket.recv(1024).decode())
