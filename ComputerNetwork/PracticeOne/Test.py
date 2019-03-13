@@ -34,7 +34,7 @@ server = ('202.114.196.97', 21568)
 client_socket = sk.socket(sk.AF_INET, sk.SOCK_DGRAM)
 client_socket.bind(host)
 
-a = '02#20171003994#12345678#'
+a = '02#20171001091#123456#'
 client_socket.sendto(a.encode(), server)
 b = client_socket.recv(1024).decode()
 print(b)

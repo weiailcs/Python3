@@ -12,6 +12,7 @@ host = ('', random.randint(30000, 50000))
 server = ('202.114.196.97', 21568)
 client_socket = sk.socket(sk.AF_INET, sk.SOCK_DGRAM)
 client_socket.bind(host)
+frame_list = []
 
 
 ###########################################################################
@@ -73,6 +74,9 @@ class LoginFrame(wx.Frame):
         self.Accept.Bind(wx.EVT_BUTTON, self.submmit)
 
         self.Show()
+
+        self.UserName.SetValue('20171001091')
+        self.PassWord.SetValue('123456')
 
     def __del__(self):
         print('登录窗口 Destroy')
@@ -316,6 +320,7 @@ class ChatFrame(wx.Frame):
 
     def quit_button_clicked(self, event):
         print('关闭')
+        frame_list.remove(self.friend_number)
         self.status = False
         self.Close()
         pass
@@ -332,6 +337,7 @@ class MenuFrame(wx.Frame):
         self.pass_word = pass_word
         self.friend_name = ''
         self.friend_number = ''
+        self.status = True
 
         ##############################################################################
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=wx.EmptyString, pos=wx.DefaultPosition,
@@ -379,9 +385,16 @@ class MenuFrame(wx.Frame):
                 if table.col(1)[i].value == self.friend_name or table.col(0)[i].value == self.friend_name:
                     self.friend_number = str(table.col(0)[i])[6:-1]
                     self.friend_name = str(table.col(1)[i])[6:-1]
+
                     if str(self.friend_number) == str(self.user_name):
                         wx.MessageBox('不能联系自己')
                         return False
+
+                    if self.friend_number in frame_list:
+                        wx.MessageBox('聊天窗口已打开')
+                        return False
+
+                    frame_list.append(self.friend_number)
                     return True
             wx.MessageBox('查无此人')
             return False
