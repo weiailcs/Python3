@@ -1,31 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import numpy as np
-import scipy as sp
-import pandas as pd
-import cv2
-import matplotlib.pyplot as plt
+M = ["", "M", "MM", "MMM"]
+C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 
-for n in range(3, 105, 1):
-    Matrix = np.zeros([n, n])
-    for i in range(n):
-        for j in range(n):
-            if i == j:
-                Matrix[i][j] = 3
-            if i - j == 1:
-                Matrix[i][j] = -1
-            if i - j == -1:
-                Matrix[i][j] = -1
-    Matrix[0][n - 1] = Matrix[n - 1][0] = -1
-    # print(Matrix)
-    print('","', end="")
-    print(int(np.linalg.det(Matrix) + 0.500), end="")
 
-# a = np.arange(0, 110, 1, dtype=np.float64)
-# a[0] = 1.0
-# a[1] = 5.0
-# for i in range(2, 101, 1):
-#     a[i] = 3.0 * a[i - 1] + 2.0 - a[i - 2]
-# for i in a:
-#     print('","', end="")
-#     print(int(i), end="")
+def fun(num):
+    return M[num // 1000] + C[(num % 1000) // 100] + X[(num % 100) // 10] + I[num % 10]
+
+
+for i in range(4000):
+    print('"'+fun(int(i))+'",',end='')
