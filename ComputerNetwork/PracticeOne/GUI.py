@@ -14,6 +14,12 @@ client_socket = sk.socket(sk.AF_INET, sk.SOCK_DGRAM)
 client_socket.bind(host)
 frame_list = []
 
+try:
+    data = xlrd.open_workbook('2017.xlsx')
+    table = data.sheet_by_index(0)
+except IOError:
+    wx.MessageBox('2017.xlsx 无法打开')
+
 
 ###########################################################################
 ## Class LoginFrame
@@ -75,8 +81,8 @@ class LoginFrame(wx.Frame):
 
         self.Show()
 
-        self.UserName.SetValue('20171001091')
-        self.PassWord.SetValue('123456')
+        # self.UserName.SetValue('20171003994')
+        # self.PassWord.SetValue('12345678')
 
     def __del__(self):
         print('登录窗口 Destroy')
@@ -378,36 +384,43 @@ class MenuFrame(wx.Frame):
         pass
 
     def find_number(self):
-        try:
-            data = xlrd.open_workbook('2017.xlsx')
-            table = data.sheet_by_index(0)
-            for i in range(table.nrows):
-                if table.col(1)[i].value == self.friend_name or table.col(0)[i].value == self.friend_name:
-                    self.friend_number = str(table.col(0)[i])[6:-1]
-                    self.friend_name = str(table.col(1)[i])[6:-1]
+        for i in range(table.nrows):
+            if table.col(1)[i].value == self.friend_name or table.col(0)[i].value == self.friend_name:
+                self.friend_number = str(table.col(0)[i])[6:-1]
+                self.friend_name = str(table.col(1)[i])[6:-1]
 
-                    if str(self.friend_number) == str(self.user_name):
-                        wx.MessageBox('不能联系自己')
-                        return False
+                if str(self.friend_number) == str(self.user_name):
+                    wx.MessageBox('不能联系自己')
+                    return False
 
-                    if self.friend_number in frame_list:
-                        wx.MessageBox('聊天窗口已打开')
-                        return False
+                if self.friend_number in frame_list:
+                    wx.MessageBox('聊天窗口已打开')
+                    return False
 
-                    frame_list.append(self.friend_number)
-                    return True
-            wx.MessageBox('查无此人')
-            return False
-        except IOError:
-            wx.MessageBox('2017.xlsx 无法打开')
-            return False
+                frame_list.append(self.friend_number)
+                return True
+        wx.MessageBox('查无此人')
+        return False
+
+    def receive_all_message(self):
+        for i in range(table.nrows):
+            out_string = '04#' + table.col(0)[i].value + '#'
+            client_socket.sendto(out_string.encode(), server)
+            in_string = client_socket.recv(1024).decode()
+            unread = int(in_string[3:])
+            print(table.col(1)[i].value)
+            if unread > 0:
+                print(table.col(1)[i].value, end=' ')
+                print(in_string)
+                frame_list.append(table.col(0)[i].value)
+                ChatFrame(friend_number=table.col(0)[i].value, friend_name=table.col(1)[i].value)
 
     # Virtual event handlers, overide them in your derived class
     def search_button_clicked(self, event):
         self.friend_name = self.friend_name_ctrl.GetValue()
-        # self.find_number()
         if self.friend_name == '':
-            wx.MessageBox('不能为空')
+            self.receive_all_message()
+            wx.MessageBox('完成')
         else:
             if self.find_number():
                 self.friend_name_ctrl.Clear()
@@ -514,5 +527,6 @@ class ModifyFrame(wx.Frame):
 
 if __name__ == '__main__':
     app = wx.App()
-    b = MenuFrame()
+    b = LoginFrame()
     app.MainLoop()
+    print(1)
