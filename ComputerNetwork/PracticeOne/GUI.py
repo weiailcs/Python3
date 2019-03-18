@@ -502,6 +502,8 @@ class ModifyFrame(wx.Frame):
 
         if '#' in self.user_name or '#' in self.pass_word:
             wx.MessageBox('不可含#')
+        elif self.user_name == '' or self.pass_word == ''
+            wx.MacThemeColour('不可为空')
         else:
             out_string = '01#' + self.user_name + '#' + self.pass_word + '#' + new_pass_word + '#' + check_new_pass_word + '#'
             client_socket.sendto(out_string.encode(), server)
