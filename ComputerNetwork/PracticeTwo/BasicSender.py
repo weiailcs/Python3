@@ -18,7 +18,7 @@ class BasicSender(object):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.settimeout(None)  # blocking
         self.sock.bind(('', random.randint(10000, 40000)))
-        if filename == None:
+        if not filename:
             self.infile = sys.stdin
         else:
             self.infile = open(filename, "r")

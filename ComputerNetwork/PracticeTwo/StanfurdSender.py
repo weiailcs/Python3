@@ -9,6 +9,7 @@ import BasicSender
 '''
 This StanfurdSender sometimes loses count of sequence numbers.
 '''
+sys.argv = [sys.argv[0],  '-p33122', '-a127.0.0.1']
 
 
 class StanfurdSender(BasicSender.BasicSender):

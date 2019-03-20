@@ -9,6 +9,7 @@ import BasicSender
 '''
 This is a simple interactive sender.
 '''
+sys.argv = [sys.argv[0], '-p33122', '-a127.0.0.1']
 
 
 class InteractiveSender(BasicSender.BasicSender):

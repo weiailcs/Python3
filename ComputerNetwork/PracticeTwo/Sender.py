@@ -7,7 +7,8 @@ import BasicSender
 '''
 This is a skeleton sender class. Create a fantastic transport protocol here.
 '''
-
+sys.argv = [sys.argv[0], '-fREADME', '-p33122', '-a127.0.0.1']
+# sys.argv =[sys.argv[0],'--help']
 
 class Sender(BasicSender.BasicSender):
     def __init__(self, dest, port, filename, debug=False):
@@ -15,7 +16,8 @@ class Sender(BasicSender.BasicSender):
 
     # Main sending loop.
     def start(self):
-        raise NotImplementedError
+        print dest
+        # raise NotImplementedError
 
     def handle_timeout(self):
         pass
@@ -59,15 +61,15 @@ if __name__ == "__main__":
     debug = False
 
     for o, a in opts:
-        if o in ("-f", "--file="):
+        if o in ("-f", "--file"):
             filename = a
-        elif o in ("-p", "--port="):
+        elif o in ("-p", "--port"):
             port = int(a)
-        elif o in ("-a", "--address="):
+        elif o in ("-a", "--address"):
             dest = a
-        elif o in ("-d", "--debug="):
+        elif o in ("-d", "--debug"):
             debug = True
-
+    print (dest, port, filename, debug)
     s = Sender(dest, port, filename, debug)
     try:
         s.start()
