@@ -14,14 +14,14 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ComputerNetwork$login.coverage" NAME="login Coverage Results" MODIFIED="1552882672606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bug" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$qq_chat_interface3.coverage" NAME="qq_chat_interface3 Coverage Results" MODIFIED="1552796137375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Test.coverage" NAME="Test Coverage Results" MODIFIED="1552890277840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$Logic.coverage" NAME="Logic Coverage Results" MODIFIED="1552889923746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Test.coverage" NAME="Test Coverage Results" MODIFIED="1552997093613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$Logic.coverage" NAME="Logic Coverage Results" MODIFIED="1552998012872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$CrawTest.coverage" NAME="CrawTest Coverage Results" MODIFIED="1551687548121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$Client.coverage" NAME="Client Coverage Results" MODIFIED="1552224785662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Communication" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$picture_download.coverage" NAME="picture_download Coverage Results" MODIFIED="1552048272464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$TCPServer.coverage" NAME="TCPServer Coverage Results" MODIFIED="1552224783370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Communication" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$threading.coverage" NAME="threading Coverage Results" MODIFIED="1552319648086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Program/Code/Py/Lib" />
-    <SUITE FILE_PATH="coverage/ComputerNetwork$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1552754662112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
+    <SUITE FILE_PATH="coverage/ComputerNetwork$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1552997119103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$data_download.coverage" NAME="data_download Coverage Results" MODIFIED="1551937627773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$LoginGUI.coverage" NAME="LoginGUI Coverage Results" MODIFIED="1552121162029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PracticeOne" />
     <SUITE FILE_PATH="coverage/ComputerNetwork$URLLIB.coverage" NAME="URLLIB Coverage Results" MODIFIED="1551937907171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
@@ -49,17 +49,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="505" column="35" selection-start-line="505" selection-start-column="35" selection-end-line="505" selection-end-column="35" />
+            <state relative-caret-position="10714">
+              <caret line="493" selection-start-line="493" selection-end-line="493" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="550">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding>
                 <element signature="e#302#311#0" expanded="true" />
               </folding>
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="100">
+              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/bug/login.py" />
         <option value="$PROJECT_DIR$/bug/button.py" />
         <option value="$PROJECT_DIR$/bug/chat.py" />
-        <option value="$PROJECT_DIR$/PracticeOne/GUI.py" />
         <option value="$PROJECT_DIR$/PracticeOne/Test.py" />
+        <option value="$PROJECT_DIR$/PracticeOne/GUI.py" />
       </list>
     </option>
   </component>
@@ -135,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,7 +157,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -178,7 +178,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Test">
+  <component name="RunManager" selected="Python.Logic">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python">
       <module name="ComputerNetwork" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -400,16 +400,21 @@
       <workItem from="1552882450734" duration="11000" />
       <workItem from="1552882563893" duration="397000" />
       <workItem from="1552889423399" duration="851000" />
+      <workItem from="1552996532022" duration="385000" />
+      <workItem from="1552997039196" duration="291000" />
+      <workItem from="1552998007796" duration="70000" />
+      <workItem from="1552998366688" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106982000" />
+    <option name="totallyTimeSpent" value="107736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5697674" visible="true" weight="0.13326226" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5697674" visible="true" weight="0.1380597" />
       <window_info id="Structure" order="1" sideWeight="0.43023255" side_tool="true" weight="0.13486141" />
       <window_info id="Favorites" order="2" sideWeight="0.50127554" side_tool="true" weight="0.114605546" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -575,29 +580,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/qq_chat_interface3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/qq_main_interface3.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/bug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
-          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-          <folding>
-            <element signature="e#25#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/PracticeOne/qq_chat_interface3.py" />
+    <entry file="file://$PROJECT_DIR$/PracticeOne/qq_main_interface3.py" />
+    <entry file="file://$PROJECT_DIR$/PracticeOne/bug.py" />
     <entry file="file://D:/Program/Code/Py/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -653,27 +638,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="505" column="35" selection-start-line="505" selection-start-column="35" selection-end-line="505" selection-end-column="35" />
+        <state relative-caret-position="10714">
+          <caret line="493" selection-start-line="493" selection-end-line="493" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="550">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="e#302#311#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
