@@ -8,16 +8,47 @@ import BasicSender
 This is a skeleton sender class. Create a fantastic transport protocol here.
 '''
 sys.argv = [sys.argv[0], '-fREADME', '-p33122', '-a127.0.0.1']
+
+
 # sys.argv =[sys.argv[0],'--help']
 
 class Sender(BasicSender.BasicSender):
     def __init__(self, dest, port, filename, debug=False):
         super(Sender, self).__init__(dest, port, filename, debug)
 
-    # Main sending loop.
+    # Single Packet Send
+    # stop-and-wait
     def start(self):
-        print dest
-        # raise NotImplementedError
+        seqno = 0
+        msg = self.infile.read(50)
+        msg_type = None
+        while not msg_type == 'end':
+            next_msg = self.infile.read(50)
+
+            msg_type = 'data'
+            if seqno == 0:
+                msg_type = 'start'
+            elif next_msg == "":
+                msg_type = 'end'
+
+            packet = self.make_packet(msg_type, seqno, msg)
+
+            self.send(packet)
+            print "sent: %s" % packet
+            response = self.receive()
+
+            while not Checksum.validate_checksum(response):
+                print "recv: %s <--- CHECKSUM FAILED" % response
+                self.send(packet)
+                print "sent: %s" % packet
+                response = self.receive()
+
+            print response
+
+            msg = next_msg
+            seqno += 1
+
+        self.infile.close()
 
     def handle_timeout(self):
         pass

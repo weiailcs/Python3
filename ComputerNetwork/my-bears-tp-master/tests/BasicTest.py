@@ -8,22 +8,18 @@ to implement a new handle_packet(), handle_tick(), and/or result() method as
 needed.
 """
 
-
 class BasicTest(object):
     """ A test case should define the following:
         - handle_packet: a method to be called whenever a packet arrives
         - handle_tick: a method to be called at every timestemp
         - result: a method to be called when it's time to return a result
     """
-
     def __init__(self, forwarder, input_file):
         self.forwarder = forwarder
 
         if not os.path.exists(input_file):
             raise ValueError("Could not find input file: %s" % input_file)
         self.input_file = input_file
-
-        print self.input_file
         self.forwarder.register_test(self, self.input_file)
 
     def handle_packet(self):
@@ -41,7 +37,6 @@ class BasicTest(object):
         are in the in_queue when this method is called -- there could be zero,
         one, or many!
         """
-        print self.forwarder
         for p in self.forwarder.in_queue:
             self.forwarder.out_queue.append(p)
         # empty out the in_queue
@@ -88,7 +83,7 @@ class BasicTest(object):
         return BasicTest.md5sum(file1) == BasicTest.md5sum(file2)
 
     @staticmethod
-    def md5sum(filename, block_size=2 ** 20):
+    def md5sum(filename, block_size=2**20):
         """
         Calculates the md5sum of a file.
 
