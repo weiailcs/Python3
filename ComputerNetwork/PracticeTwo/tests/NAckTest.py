@@ -5,7 +5,7 @@ from BasicTest import *
 
 #Hits the sender with packs that aren't acks... spooky
 
-class NonAckTest(BasicTest):
+class NAckTest(BasicTest):
     def handle_packet(self):
         for p in self.forwarder.in_queue:
             if p.msg_type=="ack":

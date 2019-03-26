@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import os
-import sys
 import socket
 import subprocess
 import time
@@ -18,9 +17,11 @@ forwarder, so they will magically be run.
 
 
 def tests_to_run(forwarder):
-    from tests import BasicTest, RandomDropTest
+    from tests import BasicTest, RandomDropTest, NAckTest, DuplicateTest
     BasicTest.BasicTest(forwarder, "README")
-    RandomDropTest.RandomDropTest(forwarder, "README").handle_packet()
+    RandomDropTest.RandomDropTest(forwarder, "README")
+    NAckTest.NAckTest(forwarder, "README")
+    DuplicateTest.DuplicateTest(forwarder, "README")
 
 
 """
@@ -62,7 +63,7 @@ class Forwarder(object):
     The packet forwarder for testing
     """
 
-    def __init__(self, sender_path, receiver_path, port):
+    def __init__(self, sender_path, receiver_path, port, debug):
         if not os.path.exists(sender_path):
             raise ValueError("Could not find sender path: %s" % sender_path)
         self.sender_path = sender_path
@@ -80,7 +81,9 @@ class Forwarder(object):
         self.test_state = "INIT"
         self.tick_interval = 0.001  # 1ms
         self.last_tick = time.time()
-        self.timeout = 600.  # seconds
+        self.timeout = 300.  # seconds
+        self.test_results = []
+        self.debug = debug
 
         # network stuff
         self.port = port
@@ -114,9 +117,16 @@ class Forwarder(object):
     def execute_tests(self):
         for (t, input_file) in self.tests:
             self.current_test = t
-            self.start(input_file)
+            print "Now running '%s'..." % self.current_test.__class__.__name__
+            try:
+                self.start(input_file)
+            except (KeyboardInterrupt, SystemExit):
+                exit()
+            except:
+                print("Test fail")
+            time.sleep(1)
 
-    def handle_receive(self, message, address):
+    def handle_receive(self, message, address, sackMode=False):
         """
         Every time we receive a new packet, this is called. We first check if
         this is the first packet we've seen -- if so, we need to learn the
@@ -124,14 +134,13 @@ class Forwarder(object):
 
         Otherwise, we add every packet we get to the in_queue.
         """
-
         # Handle new senders.
         # We need to learn the sender and receiver ports, then learn the
         # initial sequence number so we can just assume every sequence number
         # starts from zero in the test.
         if self.test_state == "NEW":
             if not address[1] == self.receiver_port:
-                start_packet = Packet(message, (None, None), 0)
+                start_packet = Packet(message, (None, None), 0, sackMode)
                 if not start_packet.bogon:
                     self.start_seqno_base = start_packet.seqno
                     self.sender_addr = address
@@ -139,9 +148,9 @@ class Forwarder(object):
 
         if self.test_state == "READY":
             if address == self.receiver_addr:
-                p = Packet(message, self.sender_addr, self.start_seqno_base)
+                p = Packet(message, self.sender_addr, self.start_seqno_base, sackMode)
             elif address == self.sender_addr:
-                p = Packet(message, self.receiver_addr, self.start_seqno_base)
+                p = Packet(message, self.receiver_addr, self.start_seqno_base, sackMode)
             else:
                 # Ignore packets from unknown sources
                 return
@@ -153,22 +162,41 @@ class Forwarder(object):
         self.sender_addr = None
         self.receiver_addr = ('127.0.0.1', self.receiver_port)
         self.recv_outfile = "127.0.0.1.%d" % self.port
-
         self.in_queue = []
         self.out_queue = []
 
-        receiver = subprocess.Popen(["python", self.receiver_path,
-                                     "-p", str(self.receiver_port)])
+        if os.path.exists(self.recv_outfile):
+            os.remove(self.recv_outfile)
+
+        receiverCmd = ["python", self.receiver_path,
+                       "-p", str(self.receiver_port)
+                       ]
+
+        senderCmd = ["python", self.sender_path,
+                     "-f", input_file,
+                     "-p", str(self.port)
+                     ]
+
+        if self.current_test.sackMode:
+            receiverCmd.append("-k")
+            senderCmd.append("-k")
+
+        if self.debug:
+            receiverCmd.append("-d")
+            senderCmd.append("-d")
+
+        receiver = subprocess.Popen(receiverCmd)
+
         time.sleep(0.2)  # make sure the receiver is started first
-        sender = subprocess.Popen(["python", self.sender_path,
-                                   "-f", input_file,
-                                   "-p", str(self.port)])
+
+        sender = subprocess.Popen(senderCmd)
+
         try:
             start_time = time.time()
             while sender.poll() is None:
                 try:
                     message, address = self.sock.recvfrom(4096)
-                    self.handle_receive(message, address)
+                    self.handle_receive(message, address, self.current_test.sackMode)
                 except socket.timeout:
                     pass
                 if time.time() - self.last_tick > self.tick_interval:
@@ -183,7 +211,6 @@ class Forwarder(object):
             if sender.poll() is None:
                 sender.kill()
             receiver.kill()
-
             # clear out everything else in the socket buffer before we end
             timeout = self.sock.gettimeout()
             try:
@@ -196,26 +223,30 @@ class Forwarder(object):
                 self.sock.settimeout(timeout)
 
         if not os.path.exists(self.recv_outfile):
-            return
-            # raise RuntimeError("No data received by receiver!")
+            raise RuntimeError("No data received by receiver!")
         self.current_test.result(self.recv_outfile)
 
 
 class Packet(object):
-    def __init__(self, packet, address, start_seqno_base):
-        self.full_packet = packet
+    def __init__(self, packet, address, start_seqno_base, sackMode):
+        self.full_packet = packet  # message content
         self.address = address  # where the packet is destined to
+        self.sack_str = ''
 
         # this is for making sure we have 0-indexed seq numbers throughout the
         # test.
         self.start_seqno_base = start_seqno_base
         try:
             pieces = packet.split('|')
-            self.msg_type, self.seqno = pieces[0:2]  # first two elements always treated as msg type and seqno
+            self.msg_type, self.seqno_str = pieces[0:2]  # first two elements always treated as msg type and seqno
             self.checksum = pieces[-1]  # last is always treated as checksum
             self.data = '|'.join(pieces[2:-1])  # everything in between is considered data
-            self.seqno = int(self.seqno) - self.start_seqno_base
-            assert (self.msg_type in ["start", "data", "ack", "end"])
+            if sackMode and self.msg_type == "sack":
+                self.seqno = int(self.seqno_str.split(';')[0]) - self.start_seqno_base
+                self.sack_str = self.seqno_str.split(';')[1]
+            else:
+                self.seqno = int(self.seqno_str) - self.start_seqno_base
+            assert (self.msg_type in ["start", "end", "data", "ack", "sack"])
             int(self.checksum)
             self.bogon = False
         except Exception as e:
@@ -246,6 +277,9 @@ class Packet(object):
             if msg_type == "ack":  # doesn't have a data field, so handle separately
                 body = "%s|%d|" % (msg_type, seqno)
                 checksum_body = "%s|%d|" % (msg_type, seqno + self.start_seqno_base)
+            elif msg_type == "sack":
+                body = "%s|%d;%s|" % (msg_type, seqno, self.sack_str)
+                checksum_body = "%s|%d;%s|" % (msg_type, seqno + self.start_seqno_base, self.sack_str)
             else:
                 body = "%s|%d|%s|" % (msg_type, seqno, data)
                 checksum_body = "%s|%d|%s|" % (msg_type, seqno + self.start_seqno_base, data)
@@ -278,11 +312,12 @@ if __name__ == "__main__":
         print "-s SENDER | --sender SENDER The path to Sender implementation (default: Sender.py)"
         print "-r RECEIVER | --receiver RECEIVER The path to the Receiver implementation (default: Receiver.py)"
         print "-h | --help Print this usage message"
+        print "-d | --debug Enable debug mode"
 
 
     try:
         opts, args = getopt.getopt(sys.argv[1:],
-                                   "p:s:r:", ["port=", "sender=", "receiver="])
+                                   "p:s:r:d", ["port=", "sender=", "receiver=", "debug="])
     except:
         usage()
         exit()
@@ -290,6 +325,7 @@ if __name__ == "__main__":
     port = 33123
     sender = "Sender.py"
     receiver = "Receiver.py"
+    debug = False
 
     for o, a in opts:
         if o in ("-p", "--port"):
@@ -298,7 +334,9 @@ if __name__ == "__main__":
             sender = a
         elif o in ("-r", "--receiver"):
             receiver = a
+        elif o in ("-d", "--debug"):
+            debug = True
 
-    f = Forwarder(sender, receiver, port)
+    f = Forwarder(sender, receiver, port, debug)
     tests_to_run(f)
     f.execute_tests()

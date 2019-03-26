@@ -12,10 +12,10 @@ Note that to implement this we just needed to override the handle_packet()
 method -- this gives you an example of how to extend the basic test case to
 create your own.
 """
-class RandomDuplicateTest(BasicTest):
+class DuplicateTest(BasicTest):
     def __init__(self, forwarder, input_file):
         BasicTest.__init__(self, forwarder, input_file, sackMode = True)
-        self.myname = "RandomDuplicateTest"
+        self.myname = "DuplicateTest"
 
     def handle_packet(self):
         for p in self.forwarder.in_queue:
