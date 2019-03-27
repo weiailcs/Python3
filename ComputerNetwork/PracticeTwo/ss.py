@@ -1,67 +1,15 @@
+import getopt
 import os
 import sys
-import getopt
-import time
 import threading
-import Checksum
+import time
+
 import BasicSender
+import Checksum
 
 '''
 This is a skeleton sender class. Create a fantastic transport protocol here.
 '''
-
-
-class Window(object):
-
-    def __init__(self, window_size):
-        self.seqno_to_packet_map = {}
-
-        # Map of <sequence number -> number of ACKs that have been received with this sequence number>
-        # We use this map to determine how to handle duplicate ACKs
-        self.seqno_to_ack_map = {}
-        self.window_size = window_size
-
-    # Adds a <sequence number -> packet> pair into map
-    def add_packet_to_map(self, seqno, packet):
-        self.seqno_to_packet_map[seqno] = (packet, False)
-
-    # Removes a <sequence number -> packet> pair from map
-    def remove_seqno_from_packet_map(self, seqno):
-        del self.seqno_to_packet_map[seqno]
-
-    # Adds a <sequence number -> number of ACKs> pair into map
-    def add_acks_count_to_map(self, seqno, ack):
-        self.seqno_to_ack_map[seqno] = ack
-
-    # Removes a <sequence number -> number of ACKs> pair from map
-    def remove_seqno_from_ack_map(self, seqno):
-        del self.seqno_to_ack_map[seqno]
-
-    # Gets a packet pair associated with a particular sequence number
-    def get_packet_via_seqno(self, seqno):
-        return self.seqno_to_packet_map[seqno][0]
-
-    def get_packet_pair_via_seqno(self, seqno):
-        return self.seqno_to_packet_map[seqno]
-
-    # Gets the number of ACKs with a particular sequence number
-    def get_ack_number_via_seqno(self, seqno):
-        return self.seqno_to_ack_map[seqno]
-
-    # Returns true or false based on whether more packets can be fit into the window
-    def window_is_full(self):
-        return len(self.seqno_to_packet_map) >= self.window_size
-
-    # Returns true or false based on whether a particular sequence number is contained in our window
-    def is_seqno_contained_in_packet_map(self, seqno):
-        return seqno in self.seqno_to_packet_map
-
-    # Returns true or false based on whether a particular seqno is contained in our ACK map
-    def is_seqno_contained_in_ack_map(self, seqno):
-        return seqno in self.seqno_to_ack_map
-
-    def get_number_of_packets_in_window(self):
-        return len(self.seqno_to_packet_map)
 
 
 class Sender(BasicSender.BasicSender):

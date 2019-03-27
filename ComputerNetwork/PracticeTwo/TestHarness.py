@@ -17,11 +17,10 @@ forwarder, so they will magically be run.
 
 
 def tests_to_run(forwarder):
-    from tests import BasicTest, RandomDropTest, NAckTest, DuplicateTest
+    from tests import BasicTest, RandomDropTest, NAckTest
     BasicTest.BasicTest(forwarder, "README")
     RandomDropTest.RandomDropTest(forwarder, "README")
     NAckTest.NAckTest(forwarder, "README")
-    DuplicateTest.DuplicateTest(forwarder, "README")
 
 
 """
@@ -324,6 +323,8 @@ if __name__ == "__main__":
 
     port = 33123
     sender = "Sender.py"
+    # sender = "s.py"
+    # sender = "ss.py"
     receiver = "Receiver.py"
     debug = False
 
