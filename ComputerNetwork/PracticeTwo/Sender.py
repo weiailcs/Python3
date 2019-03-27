@@ -6,130 +6,96 @@ import threading
 import Checksum
 import BasicSender
 
-'''
-This is a skeleton sender class. Create a fantastic transport protocol here.
-'''
 
-
-class Window(object):
-
-    def __init__(self, window_size):
-        self.seqno_to_packet_map = {}
-
-        # Map of <sequence number -> number of ACKs that have been received with this sequence number>
-        # We use this map to determine how to handle duplicate ACKs
-        self.seqno_to_ack_map = {}
-        self.window_size = window_size
-
-    # Adds a <sequence number -> packet> pair into map
-    def add_packet_to_map(self, seqno, packet):
-        self.seqno_to_packet_map[seqno] = (packet, False)
-
-    # Removes a <sequence number -> packet> pair from map
-    def remove_seqno_from_packet_map(self, seqno):
-        del self.seqno_to_packet_map[seqno]
-
-    # Adds a <sequence number -> number of ACKs> pair into map
-    def add_acks_count_to_map(self, seqno, ack):
-        self.seqno_to_ack_map[seqno] = ack
-
-    # Removes a <sequence number -> number of ACKs> pair from map
-    def remove_seqno_from_ack_map(self, seqno):
-        del self.seqno_to_ack_map[seqno]
-
-    # Gets a packet pair associated with a particular sequence number
-    def get_packet_via_seqno(self, seqno):
-        return self.seqno_to_packet_map[seqno][0]
-
-    def get_packet_pair_via_seqno(self, seqno):
-        return self.seqno_to_packet_map[seqno]
-
-    # Gets the number of ACKs with a particular sequence number
-    def get_ack_number_via_seqno(self, seqno):
-        return self.seqno_to_ack_map[seqno]
-
-    # Returns true or false based on whether more packets can be fit into the window
-    def window_is_full(self):
-        return len(self.seqno_to_packet_map) >= self.window_size
-
-    # Returns true or false based on whether a particular sequence number is contained in our window
-    def is_seqno_contained_in_packet_map(self, seqno):
-        return seqno in self.seqno_to_packet_map
-
-    # Returns true or false based on whether a particular seqno is contained in our ACK map
-    def is_seqno_contained_in_ack_map(self, seqno):
-        return seqno in self.seqno_to_ack_map
-
-    def get_number_of_packets_in_window(self):
-        return len(self.seqno_to_packet_map)
-
-
+# msg_type = 'start', 'end', 'ack', 'data'
 class Sender(BasicSender.BasicSender):
     def __init__(self, dest, port, filename, debug=False):
         super(Sender, self).__init__(dest, port, filename, debug)
 
-    # Main sending loop.
-    msg_size = 4000
-    end_size = 2 ** 32
-    send_packet = {}
-    resend_time = 0.5
-    max_now = 0
+        self.msg_size = 1472
+        self.end = 1 << 32
+        self.window_size = 5
+        self.max = 0
+        self.state = True
+        self.resend_time = 0.5
 
+        self.packet = {}
+        self.ack = {}
+
+    def start(self):
+        t = threading.Thread(target=self.handle_response)
+        t.setDaemon(True)
+        t.start()
+
+        seqno = 0
+        while seqno <= self.end + 1:
+            if seqno > self.max + self.window_size:
+                continue
+            self.send_msg(seqno)
+            seqno += 1
+        t.join()
+        self.state = False
+
+    # send message initially
     def send_msg(self, seqno):
-        if seqno > self.end_size:
+        if seqno > self.end:
             return
-        self.infile.seek(seqno * self.msg_size, os.SEEK_SET)
+
         msg = self.infile.read(self.msg_size)
-        msg_type = 'data'
+
         if seqno == 0:
             msg_type = 'start'
         elif msg.__len__() < self.msg_size:
             msg_type = 'end'
-            self.end_size = seqno
+            self.end = seqno
+        else:
+            msg_type = 'data'
+
         packet = self.make_packet(msg_type, seqno, msg)
         self.send(packet)
-        self.send_packet[seqno] = (packet, time.time())
+        self.packet[seqno] = (packet, time.time())
 
-    def start(self):
-        t = threading.Thread(target=self.rec, args=())
-        t.setDaemon(True)
-        t.start()
-        self.seqno = 0
-        while self.seqno <= self.end_size + 1:
-            if self.seqno > self.max_now + 5:
-                continue
-            self.send_msg(self.seqno)
-            self.seqno += 1
-        try:
-            t.join()
-        except:
-            pass
+    def handle_timeout(self, seqno):
+        msg = self.packet[seqno][0]
+        self.send(msg)
+        self.packet[seqno] = (msg, time.time())
 
-    def rec(self):
-        while True:
+    def handle_new_ack(self, seqno):
+        for key, value in self.packet.items():
+            if key < seqno:
+                self.resend_time = self.resend_time * 0.75 + (time.time() - value[1]) * 0.5
+                self.packet.pop(key)
+        self.max = max(self.max, seqno)
+
+    def handle_dup_ack(self, seqno):
+        msg = self.packet[seqno][0]
+        self.send(msg)
+        self.packet[seqno] = (msg, time.time())
+
+    def log(self, msg):
+        if self.debug:
+            print msg
+
+    def handle_response(self):
+        while self.state:
             response = self.receive(0.005)
-            if response is not None:
-                if Checksum.validate_checksum(response):
-                    _, seqno, _, _ = self.split_packet(response)
-                    seqno = int(seqno)
-                    if seqno - 1 == self.end_size:
-                        return
-                    for x in self.send_packet.items():
-                        if x[0] < seqno:
-                            self.resend_time = (self.resend_time * 0.75 + (time.time() - x[1][1]) * 0.5)
-                            self.send_packet.pop(x[0])
-                    self.max_now = max(self.max_now, seqno)
-            for x in self.send_packet.items():
-                if time.time() - x[1][1] > self.resend_time:
-                    self.send(x[1][0])
-                    self.send_packet[x[0]] = (x[1][0], time.time())
+            if response and Checksum.validate_checksum(response):
+                msg_type, seqno, data, checksum = self.split_packet(response)
+                seqno = int(seqno)
+
+                if seqno > self.end:
+                    return
+
+                if seqno not in self.ack:
+                    self.handle_new_ack(seqno)
+                else:
+                    self.handle_dup_ack(seqno)
+
+            for key, value in self.packet.items():
+                if time.time() - value[1] > self.resend_time:
+                    self.handle_timeout(key)
 
 
-'''
-This will be run if you run this script from the command line. You should not
-change any of this; the grader may rely on the behavior here to test your
-submission.
-'''
 if __name__ == "__main__":
     def usage():
         print "BEARS-TP Sender"

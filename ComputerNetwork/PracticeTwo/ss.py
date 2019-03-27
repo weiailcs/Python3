@@ -17,7 +17,7 @@ class Sender(BasicSender.BasicSender):
         super(Sender, self).__init__(dest, port, filename, debug)
 
     # Main sending loop.
-    msg_size = 4000
+    msg_size = 1400
     end_size = 2 ** 32
     send_packet = {}
     resend_time = 0.5
