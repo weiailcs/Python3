@@ -16,9 +16,7 @@ class Sender(BasicSender.BasicSender):
         self.end = 1 << 32
         self.window_size = 5
         self.max = 0
-        self.state = True
         self.resend_time = 0.5
-
         self.packet = {}
         self.ack = {}
 
@@ -33,10 +31,10 @@ class Sender(BasicSender.BasicSender):
                 continue
             self.send_msg(seqno)
             seqno += 1
-        t.join()
-        self.state = False
 
-    # send message initially
+        t.join()
+
+    # zhi jie fa song
     def send_msg(self, seqno):
         if seqno > self.end:
             return
@@ -55,11 +53,13 @@ class Sender(BasicSender.BasicSender):
         self.send(packet)
         self.packet[seqno] = (packet, time.time())
 
+    # chao shi chong fa
     def handle_timeout(self, seqno):
         msg = self.packet[seqno][0]
         self.send(msg)
         self.packet[seqno] = (msg, time.time())
 
+    # ack di yi ci jie shou
     def handle_new_ack(self, seqno):
         for key, value in self.packet.items():
             if key < seqno:
@@ -67,6 +67,7 @@ class Sender(BasicSender.BasicSender):
                 self.packet.pop(key)
         self.max = max(self.max, seqno)
 
+    # di er ci jie shou
     def handle_dup_ack(self, seqno):
         msg = self.packet[seqno][0]
         self.send(msg)
@@ -77,7 +78,7 @@ class Sender(BasicSender.BasicSender):
             print msg
 
     def handle_response(self):
-        while self.state:
+        while True:
             response = self.receive(0.005)
             if response and Checksum.validate_checksum(response):
                 msg_type, seqno, data, checksum = self.split_packet(response)
