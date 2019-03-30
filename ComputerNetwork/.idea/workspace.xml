@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb8396c7-a4f9-40f9-b17f-cfbcaeec2d09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeOne/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeOne/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeTwo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -135,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,6 +156,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,17 +404,17 @@
       <workItem from="1552997039196" duration="291000" />
       <workItem from="1552998007796" duration="70000" />
       <workItem from="1552998366688" duration="8000" />
+      <workItem from="1553760620397" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107736000" />
+    <option name="totallyTimeSpent" value="107747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5697674" visible="true" weight="0.1380597" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5697674" visible="true" weight="0.13965885" />
       <window_info id="Structure" order="1" sideWeight="0.43023255" side_tool="true" weight="0.13486141" />
       <window_info id="Favorites" order="2" sideWeight="0.50127554" side_tool="true" weight="0.114605546" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -658,7 +658,7 @@
     <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
