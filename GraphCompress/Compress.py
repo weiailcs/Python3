@@ -7,6 +7,18 @@ import cv2
 import wx
 
 
+class RMQ:
+    # TODO: ST优化
+    def __init__(self, vector):
+        self.vector = vector
+
+    def query(self, l, r):
+        ans = 0
+        for i in range(l, r + 1):
+            ans = max(ans, self.vector[i])
+        return ans
+
+
 class Compress:
 
     # 压缩
@@ -20,6 +32,15 @@ class Compress:
 
     @classmethod
     def img_compress(cls, vector):
+        # TODO:
+        bit = [len(bin(x)) for x in range(256)]
+        vector_bit = [bit[x] for x in vector]
+        q = RMQ(vector_bit)
+        dp = [0] * 300
+        print(vector)
+        for i in range(256):
+            dp[i] = q.query(0, i) * (i + 1) + 11
+            pass
         return vector
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
@@ -48,7 +69,6 @@ class Compress:
         vector = np.zeros(0, dtype=np.int)
         for i in range(row):
             vector = np.append(vector, matrix[i][::(-1) ** (i % 2)])
-        print(row, col)
         return vector, row, col
 
     ########################################################################################
@@ -61,6 +81,11 @@ class Compress:
         img_vector, img_row, img_col = cls.read_compress(file_name)
         img_matrix = cls.one_dimensional_to_two_dimensional(img_vector, img_row, img_col)
         cls.write_bitmap(file_name, img_matrix)
+        pass
+
+    @classmethod
+    def img_uncompress(cls, vector):
+        # TODO
         pass
 
     # 二进制读取压缩文件
