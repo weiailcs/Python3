@@ -8,15 +8,26 @@ import wx
 
 
 class RMQ:
-    # TODO: ST优化
     def __init__(self, vector):
-        self.vector = vector
+        self.max_point = np.zeros((len(vector) + 5, 20))
+        for i in range(len(vector)):
+            self.max_point[i + 1][0] = vector[i]
 
+        j = 1
+        while (1 << j) <= len(vector):
+            i = 1
+            while i + (1 << j) - 1 <= len(vector):
+                p = (1 << (j - 1))
+                self.max_point[i][j] = max(self.max_point[i][j - 1], self.max_point[i + p][j - 1])
+                i = i + 1
+            j = j + 1
+
+    # O(1)询问
     def query(self, l, r):
-        ans = 0
-        for i in range(l, r + 1):
-            ans = max(ans, self.vector[i])
-        return ans
+        l = l + 1
+        r = r + 1
+        k = int(np.log2(r - l + 1))
+        return max(self.max_point[l][k], self.max_point[r - (1 << k) + 1][k])
 
 
 class Compress:
@@ -33,14 +44,36 @@ class Compress:
     @classmethod
     def img_compress(cls, vector):
         # TODO:
+
         bit = [len(bin(x)) for x in range(256)]
         vector_bit = [bit[x] for x in vector]
         q = RMQ(vector_bit)
-        dp = [0] * 300
-        print(vector)
-        for i in range(256):
-            dp[i] = q.query(0, i) * (i + 1) + 11
-            pass
+        block_size = 256
+        length = len(vector)
+        dp = [0] * (length + 5)
+        cut = [0] * (length + 5)
+
+        print(length)
+
+        for i in range(length):
+
+            print(i)
+
+            if i < block_size:
+                dp[i] = q.query(0, i) * (i + 1) + 11
+            else:
+                dp[i] = dp[i - block_size] + q.query(i - block_size + 1, i) * block_size + 11
+
+            cut[i] = i
+            for j in range(max(0, i - block_size + 1), i):
+                tmp = dp[j] + q.query(j + 1, i) * (i - j) + 11
+                if dp[i] > tmp:
+                    dp[i] = tmp
+                    cut[i] = j
+
+        while cut[i] != i:
+            i = cut[i]
+
         return vector
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
@@ -112,5 +145,5 @@ class Compress:
 
 
 if __name__ == '__main__':
-    Compress.compress("sample_1.png")
-    Compress.uncompress("sample_1.compress")
+    Compress.compress("sample_3.png")
+    Compress.uncompress("sample_3.compress")
