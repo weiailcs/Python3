@@ -5,6 +5,7 @@ import scipy as sp
 import pandas as pd
 import cv2
 import wx
+import queue
 
 
 class RMQ:
@@ -27,7 +28,7 @@ class RMQ:
         l = l + 1
         r = r + 1
         k = int(np.log2(r - l + 1))
-        return max(self.max_point[l][k], self.max_point[r - (1 << k) + 1][k])
+        return int(max(self.max_point[l][k], self.max_point[r - (1 << k) + 1][k]))
 
 
 class Compress:
@@ -37,44 +38,55 @@ class Compress:
     def compress(cls, file_name):
         img_matrix = cls.read_bitmap(file_name)
         img_vector, img_row, img_col = cls.two_dimensional_to_one_dimensional(img_matrix)
-        img_vector = cls.img_compress(img_vector)
-        img_vector = np.append(np.array([img_row, img_col]), img_vector)
-        cls.write_compress(file_name, img_vector)
+        img_segment = cls.divide_segment(img_vector)
+        # img_vector = np.append(np.array([img_row, img_col]), img_vector)
+        # cls.write_compress(file_name, img_vector)
 
     @classmethod
-    def img_compress(cls, vector):
+    def divide_segment(cls, vector):
         # TODO:
+        vector = list(vector)
+        vector = [0, 0, 0, 0, 255, 255, 0, 0]
 
+        # 初始化
         bit = [len(bin(x)) for x in range(256)]
         vector_bit = [bit[x] for x in vector]
         q = RMQ(vector_bit)
         block_size = 256
         length = len(vector)
         dp = [0] * (length + 5)
-        cut = [0] * (length + 5)
+
+        # (第i个位置后分段, 该段二进制为j个长度, 该段有k个数字)
+        cut = [(0, 0, 0)] * (length + 5)
 
         print(length)
 
+        # 分段
         for i in range(length):
-
-            print(i)
-
             if i < block_size:
                 dp[i] = q.query(0, i) * (i + 1) + 11
+                cut[i] = (-1, q.query(0, i), i + 1)
             else:
                 dp[i] = dp[i - block_size] + q.query(i - block_size + 1, i) * block_size + 11
+                cut[i] = (-1, q.query(i - block_size + 1, i), block_size)
 
-            cut[i] = i
             for j in range(max(0, i - block_size + 1), i):
                 tmp = dp[j] + q.query(j + 1, i) * (i - j) + 11
                 if dp[i] > tmp:
                     dp[i] = tmp
-                    cut[i] = j
+                    cut[i] = (j, q.query(j + 1, i), (i - j))
 
-        while cut[i] != i:
-            i = cut[i]
+        # 查询划分
+        stack = []
+        i = length - 1
+        while i != -1:
+            i = cut[i][0]
+            stack.append(cut[i])
+        stack.reverse()
 
-        return vector
+        print(stack)
+
+        return stack
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
     @classmethod
@@ -108,6 +120,8 @@ class Compress:
 
     ########################################################################################
 
+
+class UnCompress:
     # 解压方法
     @classmethod
     def uncompress(cls, file_name):
@@ -146,4 +160,4 @@ class Compress:
 
 if __name__ == '__main__':
     Compress.compress("sample_3.png")
-    Compress.uncompress("sample_3.compress")
+    # UnCompress.uncompress("sample_3.compress")
