@@ -38,18 +38,16 @@ class Compress:
     def compress(cls, file_name):
         img_matrix = cls.read_bitmap(file_name)
         img_vector, img_row, img_col = cls.two_dimensional_to_one_dimensional(img_matrix)
-        img_segment = cls.divide_segment(img_vector)
-        # img_vector = np.append(np.array([img_row, img_col]), img_vector)
-        # cls.write_compress(file_name, img_vector)
+        img_compress_result = cls.divide_segment(img_vector, img_row, img_col)
+        cls.write_compress(file_name, img_compress_result)
 
     @classmethod
-    def divide_segment(cls, vector):
+    def divide_segment(cls, vector, row, col):
         # TODO:
         vector = list(vector)
-        vector = [0, 0, 0, 0, 255, 255, 0, 0]
 
         # 初始化
-        bit = [len(bin(x)) for x in range(256)]
+        bit = [len(bin(x)) - 2 for x in range(256)]
         vector_bit = [bit[x] for x in vector]
         q = RMQ(vector_bit)
         block_size = 256
@@ -59,16 +57,16 @@ class Compress:
         # (第i个位置后分段, 该段二进制为j个长度, 该段有k个数字)
         cut = [(0, 0, 0)] * (length + 5)
 
-        print(length)
+        # print(length)
 
-        # 分段
+        # 划分
         for i in range(length):
             if i < block_size:
                 dp[i] = q.query(0, i) * (i + 1) + 11
                 cut[i] = (-1, q.query(0, i), i + 1)
             else:
                 dp[i] = dp[i - block_size] + q.query(i - block_size + 1, i) * block_size + 11
-                cut[i] = (-1, q.query(i - block_size + 1, i), block_size)
+                cut[i] = (i - block_size, q.query(i - block_size + 1, i), block_size)
 
             for j in range(max(0, i - block_size + 1), i):
                 tmp = dp[j] + q.query(j + 1, i) * (i - j) + 11
@@ -80,13 +78,30 @@ class Compress:
         stack = []
         i = length - 1
         while i != -1:
-            i = cut[i][0]
             stack.append(cut[i])
+            i = cut[i][0]
         stack.reverse()
 
-        print(stack)
+        # print(stack)
+        # print(type(vector), type(vector[0]))
 
-        return stack
+        # 制作压缩int
+        result = 1
+        result = (result << 8) | row
+        result = (result << 8) | col
+
+        cnt = 0
+        var_len = 0
+
+        for i in vector:
+            if i == stack[cnt][0] + 1:
+                var_len = stack[cnt][1]
+                result = (result << 8) | stack[cnt][1]
+                result = (result << 8) | stack[cnt][2]
+                cnt = cnt + 1
+            result = (result << var_len) | i
+
+        return int(result)
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
     @classmethod
@@ -99,13 +114,17 @@ class Compress:
         matrix = cv2.cvtColor(matrix, cv2.COLOR_BGR2GRAY)
         file_name = file_name.split('.')[0] + ".bmp"
         cv2.imwrite(file_name, matrix)
+
+        matrix = np.array([[0, 0, 0], [255, 255, 0], [255, 0, 0]])
+
         return matrix
 
     # 二进制写压缩文件
     @classmethod
-    def write_compress(cls, file_name, vector):
+    def write_compress(cls, file_name, result):
         file_name = file_name.split('.')[0] + ".compress"
-        vector.tofile(file_name)
+        with open(file_name, 'wb') as f:
+            f.write(bytes(result.to_bytes(len(bin(result)) - 2, byteorder='big')))
 
     # 二维转一维
     @classmethod
@@ -116,30 +135,35 @@ class Compress:
             vector = np.append(vector, matrix[i][::(-1) ** (i % 2)])
         return vector, row, col
 
-    ########################################################################################
 
-    ########################################################################################
+######################################################################################################
 
+######################################################################################################
 
 class UnCompress:
     # 解压方法
     @classmethod
     def uncompress(cls, file_name):
-        img_vector, img_row, img_col = cls.read_compress(file_name)
+        img_compress_result = cls.read_compress(file_name)
+        img_vector = cls.merge_segment(img_compress_result)
         img_matrix = cls.one_dimensional_to_two_dimensional(img_vector, img_row, img_col)
-        cls.write_bitmap(file_name, img_matrix)
+        # cls.write_bitmap(file_name, img_matrix)
         pass
 
     @classmethod
-    def img_uncompress(cls, vector):
+    def merge_segment(cls, result):
         # TODO
+        return result
         pass
 
     # 二进制读取压缩文件
     @classmethod
     def read_compress(cls, file_name):
-        vector = np.fromfile(file_name, dtype=np.int)
-        return vector[2:], vector[0], vector[1]
+        return file_name
+        pass
+
+    # vector = np.fromfile(file_name, dtype=np.int)
+    # return vector[2:], vector[0], vector[1]
 
     # 写入bmp格式的解压图片
     @classmethod

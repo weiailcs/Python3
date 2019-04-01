@@ -6,15 +6,30 @@ import pandas as pd
 import cv2
 import matplotlib.pyplot as plt
 
-vector = [x for x in range(30)]
+import sys
+import base64
+import struct
 
-block_size = int(np.sqrt(len(vector)))
-dp = [0] * (block_size + 5)
+file_name = 'test.Compress'
 
-print(block_size)
+a = 255
+print(a, sys.getsizeof(a))
 
-for i in range(len(vector)):
-    print('#'+str(i))
-    for j in range(i // block_size * block_size, i):
-        print(str(j), end=' ')
-    print('')
+b = chr(a)
+print(b, sys.getsizeof(b))
+
+a = [1, 2, 3]
+
+b = 1
+for i in a:
+    b = b << (len(bin(i)) - 2)
+    b = b | i
+print(bin(b), type(bin(b)), sys.getsizeof(b), b)
+
+with open(file_name, 'wb') as f:
+    f.write(bytes(b.to_bytes(len(bin(b)) - 2, byteorder='big')))
+
+c = bytes(0)
+with open(file_name, 'rb') as f:
+    c = f.read()
+print(int.from_bytes(bytes(c), byteorder='big'))
