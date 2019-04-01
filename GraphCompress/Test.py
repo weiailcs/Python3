@@ -27,9 +27,17 @@ for i in a:
 print(bin(b), type(bin(b)), sys.getsizeof(b), b)
 
 with open(file_name, 'wb') as f:
-    f.write(bytes(b.to_bytes(len(bin(b)) - 2, byteorder='big')))
+    f.write(b.to_bytes(len(bin(b)) - 2, byteorder='big'))
 
 c = bytes(0)
 with open(file_name, 'rb') as f:
     c = f.read()
 print(int.from_bytes(bytes(c), byteorder='big'))
+
+print(16 | 8)
+
+for i in range(10):
+    print(1 << i)
+
+bit = [len(bin(x)) - 2 for x in range(256)]
+print(bit[255])

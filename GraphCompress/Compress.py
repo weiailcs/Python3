@@ -61,6 +61,7 @@ class Compress:
 
         # 划分
         for i in range(length):
+            print(i)
             if i < block_size:
                 dp[i] = q.query(0, i) * (i + 1) + 11
                 cut[i] = (-1, q.query(0, i), i + 1)
@@ -81,9 +82,9 @@ class Compress:
             stack.append(cut[i])
             i = cut[i][0]
         stack.reverse()
+        stack.append((-2, -2, -2))
 
-        # print(stack)
-        # print(type(vector), type(vector[0]))
+        print(stack)
 
         # 制作压缩int
         result = 1
@@ -92,15 +93,18 @@ class Compress:
 
         cnt = 0
         var_len = 0
-
-        for i in vector:
+        print(vector)
+        for i in range(len(vector)):
             if i == stack[cnt][0] + 1:
                 var_len = stack[cnt][1]
-                result = (result << 8) | stack[cnt][1]
-                result = (result << 8) | stack[cnt][2]
+                result = (result << 3) | int(stack[cnt][1] - 1)
+                result = (result << 8) | int(stack[cnt][2])
                 cnt = cnt + 1
-            result = (result << var_len) | i
+                # print(bin(result))
+            result = ((result << var_len) | int(vector[i]))
+            # break
 
+        # print(int(result))
         return int(result)
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
@@ -115,7 +119,7 @@ class Compress:
         file_name = file_name.split('.')[0] + ".bmp"
         cv2.imwrite(file_name, matrix)
 
-        matrix = np.array([[0, 0, 0], [255, 255, 0], [255, 0, 0]])
+        # matrix = np.array([[0, 0, 0, 0], [0, 255, 255, 0], [0, 0, 0, 255]])
 
         return matrix
 
@@ -124,7 +128,7 @@ class Compress:
     def write_compress(cls, file_name, result):
         file_name = file_name.split('.')[0] + ".compress"
         with open(file_name, 'wb') as f:
-            f.write(bytes(result.to_bytes(len(bin(result)) - 2, byteorder='big')))
+            f.write(result.to_bytes(len(bin(result)) - 2, byteorder='big'))
 
     # 二维转一维
     @classmethod
@@ -145,25 +149,50 @@ class UnCompress:
     @classmethod
     def uncompress(cls, file_name):
         img_compress_result = cls.read_compress(file_name)
-        img_vector = cls.merge_segment(img_compress_result)
-        img_matrix = cls.one_dimensional_to_two_dimensional(img_vector, img_row, img_col)
-        # cls.write_bitmap(file_name, img_matrix)
+        img_uncompress_result, img_row, img_col = cls.merge_segment(img_compress_result)
+        img_uncompress_result = np.array(img_uncompress_result)
+        img_matrix = cls.one_dimensional_to_two_dimensional(img_uncompress_result, img_row, img_col)
+        cls.write_bitmap(file_name, img_matrix)
         pass
 
     @classmethod
-    def merge_segment(cls, result):
+    def merge_segment(cls, compress_result):
         # TODO
-        return result
-        pass
+
+        print(compress_result)
+
+        uncompress_result = []
+        length = len(bin(compress_result)) - 2
+        row = (compress_result >> (length - 9)) & 255
+        col = (compress_result >> (length - 1 - 8 - 8)) & 255
+
+        print(row, col)
+
+        cnt = 17
+
+        while cnt < length:
+            cnt = cnt + 3
+            var_len = ((compress_result >> (length - cnt)) & 7) + 1
+            cnt = cnt + 8
+            var_number = (compress_result >> length - cnt) & 255
+
+            # print(var_len, var_number)
+
+            for i in range(var_number):
+                cnt = cnt + var_len
+                # print(length - cnt)
+                uncompress_result.append((compress_result >> (length - cnt)) & (2 ** var_len - 1))
+
+        # print(uncompress_result)
+        return uncompress_result, row, col
 
     # 二进制读取压缩文件
     @classmethod
     def read_compress(cls, file_name):
-        return file_name
-        pass
-
-    # vector = np.fromfile(file_name, dtype=np.int)
-    # return vector[2:], vector[0], vector[1]
+        with open(file_name, 'rb') as f:
+            result = f.read()
+        result = int.from_bytes(bytes(result), byteorder='big')
+        return result
 
     # 写入bmp格式的解压图片
     @classmethod
@@ -184,4 +213,4 @@ class UnCompress:
 
 if __name__ == '__main__':
     Compress.compress("sample_3.png")
-    # UnCompress.uncompress("sample_3.compress")
+    UnCompress.uncompress("sample_3.compress")
