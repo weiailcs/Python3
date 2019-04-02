@@ -6,11 +6,12 @@ import pandas as pd
 import cv2
 import wx
 import queue
+import md5
 
 
 class RMQ:
     def __init__(self, vector):
-        self.max_point = np.zeros((len(vector) + 5, 20))
+        self.max_point = np.zeros((len(vector) + 5, 50))
         for i in range(len(vector)):
             self.max_point[i + 1][0] = vector[i]
 
@@ -90,7 +91,7 @@ class Compress:
         result = 1
         result = (result << 8) | row
         result = (result << 8) | col
-
+        # TODO: 不一定是八位
         cnt = 0
         var_len = 0
         print(vector)
@@ -98,7 +99,7 @@ class Compress:
             if i == stack[cnt][0] + 1:
                 var_len = stack[cnt][1]
                 result = (result << 3) | int(stack[cnt][1] - 1)
-                result = (result << 8) | int(stack[cnt][2])
+                result = (result << 8) | int(stack[cnt][2] - 1)
                 cnt = cnt + 1
                 # print(bin(result))
             result = ((result << var_len) | int(vector[i]))
@@ -128,7 +129,8 @@ class Compress:
     def write_compress(cls, file_name, result):
         file_name = file_name.split('.')[0] + ".compress"
         with open(file_name, 'wb') as f:
-            f.write(result.to_bytes(len(bin(result)) - 2, byteorder='big'))
+            f.write(result.to_bytes(1, byteorder='big'))
+            # f.write(result.to_bytes(((len(bin(result)) - 2) + 7) // 8, byteorder='big'))
 
     # 二维转一维
     @classmethod
@@ -163,7 +165,7 @@ class UnCompress:
 
         uncompress_result = []
         length = len(bin(compress_result)) - 2
-        row = (compress_result >> (length - 9)) & 255
+        row = (compress_result >> (length - 1 - 8)) & 255
         col = (compress_result >> (length - 1 - 8 - 8)) & 255
 
         print(row, col)
@@ -174,7 +176,7 @@ class UnCompress:
             cnt = cnt + 3
             var_len = ((compress_result >> (length - cnt)) & 7) + 1
             cnt = cnt + 8
-            var_number = (compress_result >> length - cnt) & 255
+            var_number = ((compress_result >> length - cnt) & 255) + 1
 
             # print(var_len, var_number)
 
@@ -183,7 +185,7 @@ class UnCompress:
                 # print(length - cnt)
                 uncompress_result.append((compress_result >> (length - cnt)) & (2 ** var_len - 1))
 
-        # print(uncompress_result)
+        print(uncompress_result)
         return uncompress_result, row, col
 
     # 二进制读取压缩文件
@@ -214,3 +216,4 @@ class UnCompress:
 if __name__ == '__main__':
     Compress.compress("sample_3.png")
     UnCompress.uncompress("sample_3.compress")
+    print(md5.md5sum('sample_3.bmp') == md5.md5sum('sample_3_UnCompress.bmp'))

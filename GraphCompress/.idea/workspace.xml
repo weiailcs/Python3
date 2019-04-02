@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8039de89-14eb-48bd-89c3-4ac60e09f414" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/md5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/Compress.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_1.compress" beforeDir="false" afterPath="$PROJECT_DIR$/sample_1.compress" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_1_UnCompress.bmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sample_3.compress" beforeDir="false" afterPath="$PROJECT_DIR$/sample_3.compress" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample_3_UnCompress.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/sample_3_UnCompress.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.Compress" beforeDir="false" afterPath="$PROJECT_DIR$/test.Compress" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +20,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/GraphCompress$Compress.coverage" NAME="Compress Coverage Results" MODIFIED="1554148103523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/GraphCompress$Test.coverage" NAME="Test Coverage Results" MODIFIED="1554145188674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GraphCompress$md5.coverage" NAME="md5 Coverage Results" MODIFIED="1554164437341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GraphCompress$Compress.coverage" NAME="Compress Coverage Results" MODIFIED="1554171901357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GraphCompress$Test.coverage" NAME="Test Coverage Results" MODIFIED="1554171824453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="GraphCompress" />
@@ -27,8 +32,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Compress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="185" column="34" lean-forward="true" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
+            <state relative-caret-position="345">
+              <caret line="172" column="16" lean-forward="true" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
+              <folding>
+                <element signature="e#25#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,13 +44,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            <state relative-caret-position="574">
+              <caret line="53" column="67" lean-forward="true" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample_3.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -67,8 +80,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/md5.py" />
         <option value="$PROJECT_DIR$/Compress.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
       </list>
     </option>
   </component>
@@ -77,7 +91,9 @@
     <option name="width" value="974" />
     <option name="height" value="1087" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <showMembers ProjectPane="true" />
@@ -162,10 +178,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="md5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GraphCompress" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/md5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Compress" />
         <item itemvalue="Python.Test" />
+        <item itemvalue="Python.md5" />
       </list>
     </recent_temporary>
   </component>
@@ -194,12 +233,13 @@
       <workItem from="1554105407244" duration="1291000" />
       <workItem from="1554108760097" duration="7816000" />
       <workItem from="1554117537465" duration="1803000" />
-      <workItem from="1554135591703" duration="10953000" />
+      <workItem from="1554135591703" duration="12160000" />
+      <workItem from="1554163251554" duration="7013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70969000" />
+    <option name="totallyTimeSpent" value="79189000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -212,14 +252,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497921" visible="true" weight="0.16151386" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497921" visible="true" weight="0.16311301" />
       <window_info id="Structure" order="1" sideWeight="0.502079" side_tool="true" weight="0.15671642" />
       <window_info id="Favorites" order="2" sideWeight="0.5010395" side_tool="true" weight="0.15191898" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3908524" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21101871" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -238,13 +277,13 @@
       <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" side_tool="true" weight="0.32995737" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989605" visible="true" weight="0.15351813" />
-      <window_info id="Structure" order="1" sideWeight="0.5010395" side_tool="true" weight="0.15191898" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497921" visible="true" weight="0.16151386" />
+      <window_info id="Structure" order="1" sideWeight="0.502079" side_tool="true" weight="0.15671642" />
       <window_info id="Favorites" order="2" sideWeight="0.5010395" side_tool="true" weight="0.15191898" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44594595" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3908524" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.27858627" />
@@ -252,7 +291,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32952183" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -283,15 +322,6 @@
     <entry file="file://$PROJECT_DIR$/sample_2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_2.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_3_UnCompress.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-338784280/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -299,10 +329,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sample_3_UnCompress.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_2.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_3.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        <state relative-caret-position="574">
+          <caret line="53" column="67" lean-forward="true" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
           <folding>
             <element signature="e#25#43#0" expanded="true" />
           </folding>
@@ -311,8 +360,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Compress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="185" column="34" lean-forward="true" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
+        <state relative-caret-position="345">
+          <caret line="172" column="16" lean-forward="true" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
+          <folding>
+            <element signature="e#25#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
