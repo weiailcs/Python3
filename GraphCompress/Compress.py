@@ -7,6 +7,37 @@ import cv2
 import wx
 import queue
 import md5
+import threading as tr
+
+schedule = 0.0
+
+
+def animation():
+    app = wx.App()
+    frame = GuageFrame()
+    frame.Show()
+    app.MainLoop()
+    app.Destroy()
+    print('--------------------------------------------------------------------------------')
+
+
+class GuageFrame(wx.Frame):
+    def __init__(self):
+        wx.Frame.__init__(self, None, -1, 'Gauge Example', size=(500, 200))
+        panel = wx.Panel(self, -1)
+        panel.SetBackgroundColour("white")
+        self.count = 0
+        self.gauge = wx.Gauge(panel, -1, 100, (100, 50), (300, 30))
+        self.gauge.SetBezelFace(3)
+        self.gauge.SetShadowWidth(3)
+        self.Bind(wx.EVT_IDLE, self.OnIdle)
+        self.Center(True)
+
+    def OnIdle(self, event):
+        self.count = schedule
+        self.gauge.SetValue(self.count)
+        if self.count >= 92:
+            self.Close()
 
 
 class RMQ:
@@ -44,7 +75,14 @@ class Compress:
 
     @classmethod
     def divide_segment(cls, vector, row, col):
-        # TODO:
+
+        global schedule
+
+        print('开始分段')
+        # t = tr.Thread(target=animation)
+        # t.setDaemon(True)
+        # t.start()
+
         vector = list(vector)
 
         # 初始化
@@ -58,11 +96,9 @@ class Compress:
         # (第i个位置后分段, 该段二进制为j个长度, 该段有k个数字)
         cut = [(0, 0, 0)] * (length + 5)
 
-        # print(length)
-
         # 划分
         for i in range(length):
-            print(i)
+            schedule = i / length * 80
             if i < block_size:
                 dp[i] = q.query(0, i) * (i + 1) + 11
                 cut[i] = (-1, q.query(0, i), i + 1)
@@ -85,42 +121,37 @@ class Compress:
         stack.reverse()
         stack.append((-2, -2, -2))
 
-        print(stack)
-
+        print('制作压缩')
         # 制作压缩int
         result = 1
-        result = (result << 8) | row
-        result = (result << 8) | col
-        # TODO: 不一定是八位
+        result = int((result << 32) | row)
+        result = int((result << 32) | col)
         cnt = 0
         var_len = 0
-        print(vector)
         for i in range(len(vector)):
+            schedule = i / len(vector) * 20 + 80
+
             if i == stack[cnt][0] + 1:
                 var_len = stack[cnt][1]
                 result = (result << 3) | int(stack[cnt][1] - 1)
                 result = (result << 8) | int(stack[cnt][2] - 1)
                 cnt = cnt + 1
-                # print(bin(result))
             result = ((result << var_len) | int(vector[i]))
-            # break
 
-        # print(int(result))
+        # t.join()
+        # print(str(t.is_alive()) + '#######################')
         return int(result)
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
     @classmethod
     def read_bitmap(cls, file_name):
-        try:
-            matrix = cv2.imread(file_name)
-        except ValueError:
-            wx.MessageBox(file_name + ' Not Found !')
+        matrix = cv2.imread(file_name)
 
         matrix = cv2.cvtColor(matrix, cv2.COLOR_BGR2GRAY)
         file_name = file_name.split('.')[0] + ".bmp"
         cv2.imwrite(file_name, matrix)
 
-        # matrix = np.array([[0, 0, 0, 0], [0, 255, 255, 0], [0, 0, 0, 255]])
+        matrix = np.array([[0, 0, 0], [255, 0, 0], [255, 255, 0]])
 
         return matrix
 
@@ -128,9 +159,21 @@ class Compress:
     @classmethod
     def write_compress(cls, file_name, result):
         file_name = file_name.split('.')[0] + ".compress"
-        with open(file_name, 'wb') as f:
-            f.write(result.to_bytes(1, byteorder='big'))
-            # f.write(result.to_bytes(((len(bin(result)) - 2) + 7) // 8, byteorder='big'))
+
+        length = len(bin(result)) - 2
+        cnt = 8
+        o = open(file_name, 'wb')
+
+        while cnt <= length:
+            o.write((result >> (length - cnt) & 255).to_bytes(1, byteorder='big'))
+            cnt = cnt + 8
+
+        if length % 8 != 0:
+            o.write(((result & (2 ** (length % 8) - 1)) << (8 - length % 8)).to_bytes(1, byteorder='big'))
+            o.write(int((8 - length % 8) % 8).to_bytes(1, byteorder='big'))
+        else:
+            o.write(int(0).to_bytes(1, byteorder='big'))
+        o.close()
 
     # 二维转一维
     @classmethod
@@ -159,18 +202,19 @@ class UnCompress:
 
     @classmethod
     def merge_segment(cls, compress_result):
-        # TODO
 
-        print(compress_result)
+        print('开始解压')
 
         uncompress_result = []
+        r = compress_result & 111
+        compress_result = compress_result >> (8 + r)
+
+        tmp_len = 32
         length = len(bin(compress_result)) - 2
-        row = (compress_result >> (length - 1 - 8)) & 255
-        col = (compress_result >> (length - 1 - 8 - 8)) & 255
+        row = int((compress_result >> (length - 1 - tmp_len)) & (2 ** tmp_len - 1))
+        col = int((compress_result >> (length - 1 - tmp_len - tmp_len)) & (2 ** tmp_len - 1))
 
-        print(row, col)
-
-        cnt = 17
+        cnt = 1 + 2 * tmp_len
 
         while cnt < length:
             cnt = cnt + 3
@@ -178,14 +222,10 @@ class UnCompress:
             cnt = cnt + 8
             var_number = ((compress_result >> length - cnt) & 255) + 1
 
-            # print(var_len, var_number)
-
             for i in range(var_number):
                 cnt = cnt + var_len
-                # print(length - cnt)
                 uncompress_result.append((compress_result >> (length - cnt)) & (2 ** var_len - 1))
 
-        print(uncompress_result)
         return uncompress_result, row, col
 
     # 二进制读取压缩文件
@@ -214,6 +254,12 @@ class UnCompress:
 
 
 if __name__ == '__main__':
-    Compress.compress("sample_3.png")
-    UnCompress.uncompress("sample_3.compress")
-    print(md5.md5sum('sample_3.bmp') == md5.md5sum('sample_3_UnCompress.bmp'))
+    file_name = "D:\\Documents\\codeFiles\\Python3\GraphCompress\\4"
+    Compress.compress(file_name + ".jpg")
+    UnCompress.uncompress(file_name + ".compress")
+    print(md5.md5sum(file_name + '.bmp') == md5.md5sum(file_name + '_UnCompress.bmp'))
+    # img1 = cv2.imread(file_name + '.bmp')
+    # img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+    # img2 = cv2.imread(file_name + '_UnCompress.bmp')
+    # img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
+    # print(img1 == img2)
