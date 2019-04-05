@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8039de89-14eb-48bd-89c3-4ac60e09f414" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ComputerNetwork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GraphCompress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GraphCompress.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.compress" beforeDir="false" afterPath="$PROJECT_DIR$/4.compress" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4_UnCompress.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/4_UnCompress.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/Compress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/gauge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Note/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.127476_30.622676_0_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.127476_30.622676_90_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.127478_30.622640_0_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.132949_30.622909_90_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -371,12 +370,12 @@
       <workItem from="1554303526758" duration="3108000" />
       <workItem from="1554373184991" duration="6119000" />
       <workItem from="1554471077741" duration="5622000" />
-      <workItem from="1554478379030" duration="3224000" />
+      <workItem from="1554478379030" duration="3925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129089000" />
+    <option name="totallyTimeSpent" value="129790000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -388,7 +387,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4964132" visible="true" weight="0.16204691" />

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f19f06e-2f1b-4b20-9312-3ff91f6d9a5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../GraphCompress/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GraphCompress/Compress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.127476_30.622676_0_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.127476_30.622676_90_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.127478_30.622640_0_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/114.132949_30.622909_90_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenCV/one.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="352">
               <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
@@ -52,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="440">
               <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
@@ -73,7 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -132,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,6 +162,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,17 +382,18 @@
       <workItem from="1552515157017" duration="1303000" />
       <workItem from="1553703217742" duration="1366000" />
       <workItem from="1553753634118" duration="26000" />
+      <workItem from="1554483909081" duration="194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39559000" />
+    <option name="totallyTimeSpent" value="39753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.081023455" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08155651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -533,9 +537,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="e#25#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OpenCV/one.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="352">
           <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
             <element signature="e#25#43#0" expanded="true" />
@@ -552,25 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="440">
           <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="e#25#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SolutionForCV/Q1-10/2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="e#25#43#0" expanded="true" />
           </folding>
