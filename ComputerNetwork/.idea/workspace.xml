@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb8396c7-a4f9-40f9-b17f-cfbcaeec2d09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/PracticeTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeTwo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GraphCompress/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/.idea/GraphCompress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/.idea/GraphCompress.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GraphCompress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/4.compress" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/4.compress" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/4_UnCompress.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/4_UnCompress.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/Compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/Compress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCompress/gauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphCompress/gauge.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,31 +53,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10714">
-              <caret line="493" selection-start-line="493" selection-end-line="493" />
+            <state relative-caret-position="294">
+              <caret line="279" column="19" selection-start-line="279" selection-start-column="17" selection-end-line="279" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-              <folding>
-                <element signature="e#302#311#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="-37">
               <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
             </state>
           </provider>
@@ -135,6 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,18 +141,12 @@
             <path>
               <item name="ComputerNetwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComputerNetwork" type="462c0819:PsiDirectoryNode" />
-              <item name="bug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComputerNetwork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComputerNetwork" type="462c0819:PsiDirectoryNode" />
               <item name="PracticeOne" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,16 +395,18 @@
       <workItem from="1552998007796" duration="70000" />
       <workItem from="1552998366688" duration="8000" />
       <workItem from="1553760620397" duration="11000" />
+      <workItem from="1554480067051" duration="657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107747000" />
+    <option name="totallyTimeSpent" value="108404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5697674" visible="true" weight="0.13965885" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5697674" visible="true" weight="0.141258" />
       <window_info id="Structure" order="1" sideWeight="0.43023255" side_tool="true" weight="0.13486141" />
       <window_info id="Favorites" order="2" sideWeight="0.50127554" side_tool="true" weight="0.114605546" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -638,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10714">
-          <caret line="493" selection-start-line="493" selection-end-line="493" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -657,8 +642,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PracticeOne/Logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="-37">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracticeOne/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="279" column="19" selection-start-line="279" selection-start-column="17" selection-end-line="279" selection-end-column="19" />
         </state>
       </provider>
     </entry>

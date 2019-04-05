@@ -7,37 +7,45 @@ import cv2
 import wx
 import queue
 import md5
+
 import threading as tr
+import _thread
+import time
 
 schedule = 0.0
 
 
-def animation():
-    app = wx.App()
-    frame = GuageFrame()
-    frame.Show()
-    app.MainLoop()
-    app.Destroy()
-    print('--------------------------------------------------------------------------------')
-
-
 class GuageFrame(wx.Frame):
-    def __init__(self):
+    def __init__(self, path):
         wx.Frame.__init__(self, None, -1, 'Gauge Example', size=(500, 200))
         panel = wx.Panel(self, -1)
         panel.SetBackgroundColour("white")
         self.count = 0
-        self.gauge = wx.Gauge(panel, -1, 100, (100, 50), (300, 30))
+        self.gauge = wx.Gauge(panel, -1, 100, (50, 50), (300, 20))
         self.gauge.SetBezelFace(3)
         self.gauge.SetShadowWidth(3)
-        self.Bind(wx.EVT_IDLE, self.OnIdle)
+        # 进度条自身绑定循环任务，监听进度
+        self.gauge.Bind(wx.EVT_IDLE, self.OnIdle)
         self.Center(True)
+        # self.Show()
+
+        t = tr.Thread(target=Compress.compress, args=(path,))
+        # self.t.setDaemon(True)
+        t.start()
 
     def OnIdle(self, event):
+        time.sleep(0.2)
         self.count = schedule
         self.gauge.SetValue(self.count)
-        if self.count >= 92:
-            self.Close()
+        if self.count == 100:
+            # 到达计划进度，取消进度条
+            # self.t.join()
+            time.sleep(5)
+            self.Destroy()
+
+    def timer(self, no):
+        time.sleep(0.1)
+        self.count = self.count + 1
 
 
 class RMQ:
@@ -79,9 +87,6 @@ class Compress:
         global schedule
 
         print('开始分段')
-        # t = tr.Thread(target=animation)
-        # t.setDaemon(True)
-        # t.start()
 
         vector = list(vector)
 
@@ -99,6 +104,10 @@ class Compress:
         # 划分
         for i in range(length):
             schedule = i / length * 80
+
+            if int(schedule) == schedule:
+                print(schedule)
+
             if i < block_size:
                 dp[i] = q.query(0, i) * (i + 1) + 11
                 cut[i] = (-1, q.query(0, i), i + 1)
@@ -131,6 +140,9 @@ class Compress:
         for i in range(len(vector)):
             schedule = i / len(vector) * 20 + 80
 
+            if int(schedule) == schedule:
+                print(schedule)
+
             if i == stack[cnt][0] + 1:
                 var_len = stack[cnt][1]
                 result = (result << 3) | int(stack[cnt][1] - 1)
@@ -138,8 +150,6 @@ class Compress:
                 cnt = cnt + 1
             result = ((result << var_len) | int(vector[i]))
 
-        # t.join()
-        # print(str(t.is_alive()) + '#######################')
         return int(result)
 
     # 读取任意格式图像并转为灰度图，并且储存为bmp格式
@@ -151,13 +161,15 @@ class Compress:
         file_name = file_name.split('.')[0] + ".bmp"
         cv2.imwrite(file_name, matrix)
 
-        matrix = np.array([[0, 0, 0], [255, 0, 0], [255, 255, 0]])
+        # matrix = np.array([[0, 0, 0], [255, 0, 0], [255, 255, 0]])
 
         return matrix
 
     # 二进制写压缩文件
     @classmethod
     def write_compress(cls, file_name, result):
+        global schedule
+
         file_name = file_name.split('.')[0] + ".compress"
 
         length = len(bin(result)) - 2
@@ -174,6 +186,8 @@ class Compress:
         else:
             o.write(int(0).to_bytes(1, byteorder='big'))
         o.close()
+
+        schedule = 100
 
     # 二维转一维
     @classmethod
@@ -255,7 +269,14 @@ class UnCompress:
 
 if __name__ == '__main__':
     file_name = "D:\\Documents\\codeFiles\\Python3\GraphCompress\\4"
-    Compress.compress(file_name + ".jpg")
+
+    app = wx.App()
+    frame = GuageFrame(file_name + '.jpg')
+    frame.Show()
+    # 创建线程，设定延迟加载时间及间隔执行时间
+    # _thread.start_new_thread(frame.timer, (0.5,))
+    app.MainLoop()
+
     UnCompress.uncompress(file_name + ".compress")
     print(md5.md5sum(file_name + '.bmp') == md5.md5sum(file_name + '_UnCompress.bmp'))
     # img1 = cv2.imread(file_name + '.bmp')
@@ -263,3 +284,4 @@ if __name__ == '__main__':
     # img2 = cv2.imread(file_name + '_UnCompress.bmp')
     # img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
     # print(img1 == img2)
+    pass
