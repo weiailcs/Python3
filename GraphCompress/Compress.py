@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import scipy as sp
-import pandas as pd
 import cv2
 import wx
-import queue
 import md5
 
 import threading as tr
@@ -13,6 +10,10 @@ import _thread
 import time
 
 schedule = 0.0
+
+
+def get_schedule():
+    return schedule
 
 
 class GuageFrame(wx.Frame):
@@ -27,25 +28,21 @@ class GuageFrame(wx.Frame):
         # 进度条自身绑定循环任务，监听进度
         self.gauge.Bind(wx.EVT_IDLE, self.OnIdle)
         self.Center(True)
-        # self.Show()
 
         t = tr.Thread(target=Compress.compress, args=(path,))
-        # self.t.setDaemon(True)
         t.start()
 
     def OnIdle(self, event):
-        time.sleep(0.2)
-        self.count = schedule
+        print(self.count)
         self.gauge.SetValue(self.count)
         if self.count == 100:
-            # 到达计划进度，取消进度条
-            # self.t.join()
             time.sleep(5)
             self.Destroy()
 
     def timer(self, no):
-        time.sleep(0.1)
-        self.count = self.count + 1
+        while True:
+            self.count = get_schedule()
+            time.sleep(0.5)
 
 
 class RMQ:
@@ -105,9 +102,6 @@ class Compress:
         for i in range(length):
             schedule = i / length * 80
 
-            if int(schedule) == schedule:
-                print(schedule)
-
             if i < block_size:
                 dp[i] = q.query(0, i) * (i + 1) + 11
                 cut[i] = (-1, q.query(0, i), i + 1)
@@ -139,9 +133,6 @@ class Compress:
         var_len = 0
         for i in range(len(vector)):
             schedule = i / len(vector) * 20 + 80
-
-            if int(schedule) == schedule:
-                print(schedule)
 
             if i == stack[cnt][0] + 1:
                 var_len = stack[cnt][1]
@@ -268,20 +259,19 @@ class UnCompress:
 
 
 if __name__ == '__main__':
-    file_name = "D:\\Documents\\codeFiles\\Python3\GraphCompress\\4"
+    path = file_name = "D:\\Documents\\codeFiles\\Python3\GraphCompress\\4.jpg"
 
     app = wx.App()
     frame = GuageFrame(file_name + '.jpg')
-    frame.Show()
+    # frame.Show()
     # 创建线程，设定延迟加载时间及间隔执行时间
-    # _thread.start_new_thread(frame.timer, (0.5,))
+    _thread.start_new_thread(frame.timer, (0.5,))
     app.MainLoop()
 
     UnCompress.uncompress(file_name + ".compress")
     print(md5.md5sum(file_name + '.bmp') == md5.md5sum(file_name + '_UnCompress.bmp'))
-    # img1 = cv2.imread(file_name + '.bmp')
-    # img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-    # img2 = cv2.imread(file_name + '_UnCompress.bmp')
-    # img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-    # print(img1 == img2)
-    pass
+    img1 = cv2.imread(file_name + '.bmp')
+    img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+    img2 = cv2.imread(file_name + '_UnCompress.bmp')
+    img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
+    print(img1 == img2)

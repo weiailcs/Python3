@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8039de89-14eb-48bd-89c3-4ac60e09f414" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Note/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tmp/114.127476_30.622676_0_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tmp/114.127476_30.622676_90_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tmp/114.127478_30.622640_0_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tmp/114.132949_30.622909_90_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tmp/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/Compress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +14,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/GraphCompress$gauge.coverage" NAME="gauge Coverage Results" MODIFIED="1554473404782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/GraphCompress$Main.coverage" NAME="Main Coverage Results" MODIFIED="1554481635497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GraphCompress$Main.coverage" NAME="Main Coverage Results" MODIFIED="1554541648516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraphCompress$md5.coverage" NAME="md5 Coverage Results" MODIFIED="1554164437341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraphCompress$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1554278878879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/GraphCompress$Compress.coverage" NAME="Compress Coverage Results" MODIFIED="1554481585895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GraphCompress$Compress.coverage" NAME="Compress Coverage Results" MODIFIED="1554541087492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraphCompress$Test.coverage" NAME="Test Coverage Results" MODIFIED="1554291641681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraphCompress$MainGUI.coverage" NAME="MainGUI Coverage Results" MODIFIED="1554282618163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -45,58 +40,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Compress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="278">
+              <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
               <folding>
-                <element signature="e#977#1031#0" />
-                <element signature="e#993#1664#0" />
-                <element signature="e#1029#1468#0" />
-                <element signature="e#1230#1468#0" />
-                <element signature="e#1303#1446#0" />
-                <element signature="e#1518#1664#0" />
-                <element signature="e#2533#3217#0" />
-                <element signature="e#2683#2771#0" />
-                <element signature="e#2806#2969#0" />
-                <element signature="e#3046#3217#0" />
-                <element signature="e#3145#3217#0" />
-                <element signature="e#3311#3357#0" />
-                <element signature="e#3648#4057#0" />
-                <element signature="e#3816#3997#0" />
-                <element signature="e#4750#4846#0" />
-                <element signature="e#4888#5058#0" />
-                <element signature="e#5243#5439#0" />
-                <element signature="e#5442#5544#0" />
-                <element signature="e#5672#7718#0" />
-                <element signature="e#5740#6105#0" />
-                <element signature="e#7110#7258#0" />
-                <element signature="e#7350#7457#0" />
-                <element signature="e#7563#7718#0" />
-                <element signature="e#7638#7696#0" />
+                <element signature="e#25#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gauge.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="418">
+              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
               <folding>
                 <element signature="e#25#69#0" expanded="true" />
               </folding>
@@ -140,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1087" />
@@ -370,12 +330,12 @@
       <workItem from="1554303526758" duration="3108000" />
       <workItem from="1554373184991" duration="6119000" />
       <workItem from="1554471077741" duration="5622000" />
-      <workItem from="1554478379030" duration="3925000" />
+      <workItem from="1554478379030" duration="7661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129790000" />
+    <option name="totallyTimeSpent" value="133526000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -387,15 +347,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4964132" visible="true" weight="0.16204691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4964132" visible="true" weight="0.16204691" />
       <window_info id="Structure" order="1" sideWeight="0.5035868" side_tool="true" weight="0.17430703" />
       <window_info id="Favorites" order="2" sideWeight="0.5035868" side_tool="true" weight="0.17430703" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24324325" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26715177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28794178" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,27 +440,6 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Compress.py</url>
-          <line>280</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Compress.py</url>
-          <line>286</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sample_1.jpg" />
     <entry file="file://$PROJECT_DIR$/1.bmp" />
@@ -528,9 +466,6 @@
     <entry file="file://$PROJECT_DIR$/sample_2.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/sample_3_UnCompress.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -539,16 +474,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sample_2.compress">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.compress">
       <provider selected="true" editor-type-id="text-editor" />
@@ -611,55 +536,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Compress.py">
+    <entry file="file://$PROJECT_DIR$/MainGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="440">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="11" />
           <folding>
-            <element signature="e#977#1031#0" />
-            <element signature="e#993#1664#0" />
-            <element signature="e#1029#1468#0" />
-            <element signature="e#1230#1468#0" />
-            <element signature="e#1303#1446#0" />
-            <element signature="e#1518#1664#0" />
-            <element signature="e#2533#3217#0" />
-            <element signature="e#2683#2771#0" />
-            <element signature="e#2806#2969#0" />
-            <element signature="e#3046#3217#0" />
-            <element signature="e#3145#3217#0" />
-            <element signature="e#3311#3357#0" />
-            <element signature="e#3648#4057#0" />
-            <element signature="e#3816#3997#0" />
-            <element signature="e#4750#4846#0" />
-            <element signature="e#4888#5058#0" />
-            <element signature="e#5243#5439#0" />
-            <element signature="e#5442#5544#0" />
-            <element signature="e#5672#7718#0" />
-            <element signature="e#5740#6105#0" />
-            <element signature="e#7110#7258#0" />
-            <element signature="e#7350#7457#0" />
-            <element signature="e#7563#7718#0" />
-            <element signature="e#7638#7696#0" />
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#25#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gauge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="528">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/Compress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="278">
+          <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
           <folding>
-            <element signature="e#25#69#0" expanded="true" />
+            <element signature="e#25#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

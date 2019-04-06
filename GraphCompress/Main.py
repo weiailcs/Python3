@@ -7,12 +7,14 @@ import wx
 import md5
 
 if __name__ == '__main__':
-    frame = wx.App()
-    app = DirDialog()
-    app.Show()
-    frame.MainLoop()
+    app = wx.App()
+    frame = DirDialog()
+    frame.Show()
+    app.MainLoop()
+    app.Destroy()
 
     path = get_file_path()
+
     if path.find('\\'):
         path = path.replace('\\', '/')
     elif path.find('\\\\'):
@@ -23,13 +25,12 @@ if __name__ == '__main__':
     print(file_name)
 
     if str(path.split('.')[-1]) in ['bmp', 'png', 'jpg']:
-        # Compress.compress(path)
         print('START')
         app = wx.App()
         frame = GuageFrame(path)
         frame.Show()
         # 创建线程，设定延迟加载时间及间隔执行时间
-        # _thread.start_new_thread(frame.timer, (0.5, 0.2))
+        _thread.start_new_thread(frame.timer, (0.5,))
         app.MainLoop()
 
         UnCompress.uncompress(file_name + ".compress")
