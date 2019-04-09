@@ -2,9 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8039de89-14eb-48bd-89c3-4ac60e09f414" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../tmp/2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/Math.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/MonteCarlo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm/Math/SA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/BEARS_TP-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ComputerNetwork/PracticeTwo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bears-tp-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/bug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/chat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/frienddata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/hat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/qicq.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/qq_chat_interface3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/qq_main_interface3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/bug/暴雪.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/crawler/URLLIB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/crawler/URLLIB.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/crawler/data_download.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/crawler/data_download.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/crawler/picture_download.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/crawler/picture_download.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/127.0.0.1.33123" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/BasicSender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/Checksum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/InteractiveSender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/LONG_FILE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/REAL_README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/Receiver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/Sender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/StanfurdSender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/TestHarness.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/UnreliableSender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/format-check.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/lorem-ipsum.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/one_char.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/small_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/BasicTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/CorruptTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/DelayTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/DropFirstPacketsTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/DropStartAckTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/NonAckTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/RandomDropTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/RandomDuplicateTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/RandomReorderTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/SackRandomDropTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/StartAndEndTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ComputerNetwork/cs168-proj2-master/tests/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/Compress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/.idea/GraphCut.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/Main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/data.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/fulltext.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphCut/output.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tmp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,10 +117,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Compress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
+            <state relative-caret-position="98">
+              <caret line="170" column="63" lean-forward="true" selection-start-line="170" selection-start-column="62" selection-end-line="170" selection-end-column="63" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
+                <element signature="e#219#1037#0" />
+                <element signature="e#1055#1726#0" />
+                <element signature="e#5609#7655#0" />
               </folding>
             </state>
           </provider>
@@ -55,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+            <state relative-caret-position="341">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
               <folding>
                 <element signature="e#25#69#0" expanded="true" />
               </folding>
@@ -331,11 +408,16 @@
       <workItem from="1554373184991" duration="6119000" />
       <workItem from="1554471077741" duration="5622000" />
       <workItem from="1554478379030" duration="7661000" />
+      <workItem from="1554558219283" duration="36000" />
+      <workItem from="1554713236636" duration="72000" />
+      <workItem from="1554718851558" duration="1034000" />
+      <workItem from="1554722905648" duration="631000" />
+      <workItem from="1554773905682" duration="317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133526000" />
+    <option name="totallyTimeSpent" value="135616000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -349,7 +431,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4964132" visible="true" weight="0.16204691" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4964132" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" sideWeight="0.5035868" side_tool="true" weight="0.17430703" />
       <window_info id="Favorites" order="2" sideWeight="0.5035868" side_tool="true" weight="0.17430703" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -370,7 +452,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
-      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" side_tool="true" weight="0.26492536" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497921" visible="true" weight="0.16151386" />
@@ -549,16 +631,6 @@
     <entry file="file://$PROJECT_DIR$/sample_3.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#25#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gauge.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -569,12 +641,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#25#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Compress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
+        <state relative-caret-position="98">
+          <caret line="170" column="63" lean-forward="true" selection-start-line="170" selection-start-column="62" selection-end-line="170" selection-end-column="63" />
           <folding>
             <element signature="e#25#43#0" expanded="true" />
+            <element signature="e#219#1037#0" />
+            <element signature="e#1055#1726#0" />
+            <element signature="e#5609#7655#0" />
           </folding>
         </state>
       </provider>

@@ -6,5 +6,7 @@ import pandas as pd
 import cv2
 import matplotlib.pyplot as plt
 
-if __name__ == '__main__':
-    pass
+a = [][1]
+
+def dfs(x):
+    for i in range(len(a)):
