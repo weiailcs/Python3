@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8039de89-14eb-48bd-89c3-4ac60e09f414" name="Default Changelist" comment="" />
+    <list default="true" id="8039de89-14eb-48bd-89c3-4ac60e09f414" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Compress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
+            <state relative-caret-position="472">
+              <caret line="224" column="25" selection-start-line="224" selection-start-column="25" selection-end-line="224" selection-end-column="25" />
               <folding>
                 <element signature="e#169#184#0" />
                 <element signature="e#219#1037#0" />
@@ -54,7 +56,6 @@
                 <element signature="e#1292#1530#0" />
                 <element signature="e#1365#1508#0" />
                 <element signature="e#1580#1726#0" />
-                <element signature="e#1750#5376#0" />
                 <element signature="e#1814#2081#0" />
                 <element signature="e#2156#3997#0" />
                 <element signature="e#2595#3204#0" />
@@ -66,15 +67,10 @@
                 <element signature="e#3635#3969#0" />
                 <element signature="e#3728#3909#0" />
                 <element signature="e#4093#4367#0" />
-                <element signature="e#4457#5084#0" />
                 <element signature="e#4663#4759#0" />
-                <element signature="e#4801#4971#0" />
                 <element signature="e#5180#5376#0" />
                 <element signature="e#5379#5481#0" />
-                <element signature="e#5609#7655#0" />
                 <element signature="e#5677#6042#0" />
-                <element signature="e#6115#6965#0" />
-                <element signature="e#6567#6921#0" />
                 <element signature="e#6803#6921#0" />
                 <element signature="e#7047#7195#0" />
                 <element signature="e#7287#7394#0" />
@@ -86,14 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-              <folding>
-                <element signature="e#25#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="528">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -101,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-443">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="110">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="e#25#69#0" expanded="true" />
               </folding>
@@ -163,20 +156,7 @@
       <sortByType ProjectPane="true" />
       <foldersAlwaysOnTop value="false" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GraphCompress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphCompress" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -383,12 +363,18 @@
       <workItem from="1554718851558" duration="1034000" />
       <workItem from="1554722905648" duration="631000" />
       <workItem from="1554773905682" duration="317000" />
-      <workItem from="1554876046353" duration="3479000" />
+      <workItem from="1554876046353" duration="3745000" />
+      <workItem from="1554981612576" duration="108000" />
+      <workItem from="1555377378165" duration="122000" />
+      <workItem from="1555419100046" duration="604000" />
+      <workItem from="1555500757161" duration="315000" />
+      <workItem from="1555503154388" duration="1506000" />
+      <workItem from="1555631815990" duration="27000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139095000" />
+    <option name="totallyTimeSpent" value="142043000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -611,19 +597,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="76.5" y="55.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="77.0" y="55.0" />
           <SelectedNodes />
           <Categories />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#25#69#0" expanded="true" />
-          </folding>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -635,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Compress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
+        <state relative-caret-position="472">
+          <caret line="224" column="25" selection-start-line="224" selection-start-column="25" selection-end-line="224" selection-end-column="25" />
           <folding>
             <element signature="e#169#184#0" />
             <element signature="e#219#1037#0" />
@@ -650,7 +627,6 @@
             <element signature="e#1292#1530#0" />
             <element signature="e#1365#1508#0" />
             <element signature="e#1580#1726#0" />
-            <element signature="e#1750#5376#0" />
             <element signature="e#1814#2081#0" />
             <element signature="e#2156#3997#0" />
             <element signature="e#2595#3204#0" />
@@ -662,15 +638,10 @@
             <element signature="e#3635#3969#0" />
             <element signature="e#3728#3909#0" />
             <element signature="e#4093#4367#0" />
-            <element signature="e#4457#5084#0" />
             <element signature="e#4663#4759#0" />
-            <element signature="e#4801#4971#0" />
             <element signature="e#5180#5376#0" />
             <element signature="e#5379#5481#0" />
-            <element signature="e#5609#7655#0" />
             <element signature="e#5677#6042#0" />
-            <element signature="e#6115#6965#0" />
-            <element signature="e#6567#6921#0" />
             <element signature="e#6803#6921#0" />
             <element signature="e#7047#7195#0" />
             <element signature="e#7287#7394#0" />
@@ -683,10 +654,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="528">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding>
-            <element signature="e#25#43#0" expanded="true" />
+            <element signature="e#25#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
