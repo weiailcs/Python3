@@ -4,7 +4,7 @@ from sim.basics import BasicHost
 from hub import Hub
 
 
-def create(switch_type=Hub, host_type=BasicHost, n=2):
+def create(switch_type=Hub, host_type=BasicHost, n=4):
     """
     Creates a really simple topology like:
     s1 -- s2 -- .. -- sn

@@ -10,15 +10,18 @@ _ENABLE_GUI = "--gui" in sys.argv
 # which displays logs itself.
 _DISABLE_CONSOLE_LOG = True
 
-from hub import Hub as switch
+# from hub import Hub as switch
 # from rip_router import RIPRouter as switch
+from learing_switch import LearningSwitch as switch
 
 import sim.core
 import scenarios
 
 time.sleep(1)  # Wait a sec for log client to maybe connect
 
-import scenarios.linear as scenario
+# import scenarios.linear as scenario
+import scenarios.myScenarios as scenario
+
 # import scenarios.candy as scenario
 
 scenario.create(switch_type=switch)
