@@ -1,13 +1,6 @@
 from sim.basics import *
 
 '''
-Create your RIP router in this file.
-TODO:	break ties with router ID 
-		implement implicit withdrawl
-		implement poision reverse and split horizon??
-'''
-
-'''
 class DiscoveryPacket (Packet):
     """
     A "link latency change" packet.
@@ -62,6 +55,8 @@ class RoutingUpdate (Packet):
 class RIPRouter(Entity):
 
     def __init__(self):
+
+        # self.ports[dst] = port
         self.ports = {}
 
         # self.routing_table[neighbor][dst] = cost
@@ -74,7 +69,12 @@ class RIPRouter(Entity):
 
     def handle_rx(self, packet, port):
 
+        print packet
+
         def update_shortest_path():
+            '''
+            should update ?
+            '''
             flag = False
             for neighbor in self.routing_table:
                 for dst in self.routing_table[neighbor]:
@@ -82,48 +82,65 @@ class RIPRouter(Entity):
                     if dst in self.shortest_path:
                         if cost < self.shortest_path[dst][1]:
                             flag = True
-                            print cost, self.shortest_path[dst][1]
                             self.shortest_path[dst] = (neighbor, cost)
                     else:
                         flag = True
                         self.shortest_path[dst] = (neighbor, cost)
             return flag
 
-        def struct_update_packet(src):
+        def struct_update_packet(neighbor):
+            '''
+            pack update message
+            '''
             update_packet = RoutingUpdate()
             for dst in self.shortest_path:
-                if dst != src:
-                    if self.shortest_path[dst][0] == src:
+                if dst != neighbor:
+                    if self.shortest_path[dst][0] == neighbor:
                         update_packet.add_destination(dst, self.INF)
                     else:
                         update_packet.add_destination(dst, self.shortest_path[dst][1])
             return update_packet
 
         if isinstance(packet, DiscoveryPacket):
-            self.ports[packet.src] = port
+            '''
+            handle initial message
+            '''
+            neighbor = packet.src
+            self.ports[neighbor] = port
             if packet.is_link_up:
-                self.routing_table[packet.src] = {packet.src: 1}
+                self.routing_table[neighbor] = {neighbor: 1}
             else:
-                # del self.ports[packet.src]
-                del self.routing_table[packet.src]
+                self.routing_table.pop(packet.src)
 
         elif isinstance(packet, RoutingUpdate):
+            '''
+            handle update message
+            '''
             if packet.src not in self.routing_table:
                 pass
             else:
+                neighbor = packet.src
+                self.ports[neighbor] = port
                 for dst in packet.all_dests():
                     if packet.get_distance(dst) == self.INF:
-                        self.routing_table[packet.src][dst] = self.INF
+                        self.routing_table[neighbor][dst] = self.INF
                     else:
-                        self.routing_table[packet.src][dst] \
-                            = self.shortest_path[packet.src][1] + packet.get_distance(dst)
+                        self.routing_table[neighbor][dst] \
+                            = self.shortest_path[neighbor][1] + packet.get_distance(dst)
         else:
+            '''
+            handle normal message
+            '''
             if packet.dst in self.shortest_path:
                 if self.shortest_path[packet.dst][1] != self.INF:
-                    self.send(packet, self.ports[self.shortest_path[packet.dst][0]], flood=False)
+                    neighbor = self.shortest_path[packet.dst][0]
+                    self.send(packet, self.ports[neighbor], flood=False)
             return None
 
         if update_shortest_path():
+            '''
+            flood, send update message
+            '''
             for neighbor in self.routing_table:
                 update_packet = struct_update_packet(neighbor)
                 if len(update_packet.all_dests()) > 0:
