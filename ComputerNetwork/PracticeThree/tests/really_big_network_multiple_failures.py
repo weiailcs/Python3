@@ -2,9 +2,7 @@ import sys
 
 sys.path.append('.')
 
-import sim
 from sim.basics import BasicHost, RoutingUpdate, DiscoveryPacket
-import sim.topo as topo
 from sim.api import *
 from rip_router import RIPRouter
 import sim.topo as topo

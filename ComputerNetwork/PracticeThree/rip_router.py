@@ -69,52 +69,25 @@ class RIPRouter(Entity):
 
     def handle_rx(self, packet, port):
 
-        # print packet
-
-        def min_by_port(lst):
-            lowers = []
-            for index, (key, value) in enumerate(sorted(lst, key=lambda x: x[1])):
-                if index == 0:
-                    lowers.append((key, value))
-                elif value == lowers[0][1]:
-                    lowers.append((key, value))
-            return min(lowers, key=lambda x: self.ports[x[0]])
-
         def update_shortest_path():
             '''
             should update ?
             '''
-
             pre = self.shortest_path.copy()
-            destDict = {}
-            for row in self.routing_table:  # each row is the neighbour
-                for dest in self.routing_table[row]:  # the dictionary has a whole bunch of "dest, cost" values
-                    cost = self.routing_table[row][dest]
-                    if destDict.has_key(dest):
-                        lst = destDict[dest]
-                        lst.append((row, cost))
-                        destDict[dest] = lst  # through row, costing cost
+            self.shortest_path.clear()
+            for neighbor in self.routing_table:
+                for dst in self.routing_table[neighbor]:
+                    cost = self.routing_table[neighbor][dst]
+                    if dst in self.shortest_path:
+                        if cost < self.shortest_path[dst][1]:
+                            self.shortest_path[dst] = (neighbor, cost)
+                        elif cost == self.shortest_path[dst][1]:
+                            if self.ports[neighbor] < self.ports[self.shortest_path[dst][0]]:
+                                self.shortest_path[dst] = (neighbor, cost)
                     else:
-                        destDict[dest] = [(row, cost)]
+                        self.shortest_path[dst] = (neighbor, cost)
 
-            for dest in destDict:  # destdict is each destination and the cost to get through it, and who its through
-                self.shortest_path[dest] = min_by_port(destDict[dest])
-
-            # print " mincosts is ", self.minCosts,  "changed  = ", preChange != self.minCosts
-            return pre != self.shortest_path
-
-            # flag = False
-            # for neighbor in self.routing_table:
-            #     for dst in self.routing_table[neighbor]:
-            #         cost = self.routing_table[neighbor][dst]
-            #         if dst in self.shortest_path:
-            #             if cost < self.shortest_path[dst][1]:
-            #                 flag = True
-            #                 self.shortest_path[dst] = (neighbor, cost)
-            #         else:
-            #             flag = True
-            #             self.shortest_path[dst] = (neighbor, cost)
-            # return flag
+            return self.shortest_path != pre
 
         def struct_update_packet(neighbor):
             '''
@@ -138,8 +111,6 @@ class RIPRouter(Entity):
             if packet.is_link_up:
                 self.routing_table[neighbor] = {neighbor: 1}
             else:
-                # print self.routing_table
-                print self
                 del self.routing_table[packet.src]
         elif isinstance(packet, RoutingUpdate):
             '''
@@ -149,7 +120,6 @@ class RIPRouter(Entity):
                 pass
             else:
                 neighbor = packet.src
-                # self.ports[neighbor] = port
                 for dst in packet.all_dests():
                     if packet.get_distance(dst) == self.INF:
                         self.routing_table[neighbor][dst] = self.INF
