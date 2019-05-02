@@ -121,7 +121,7 @@ class RIPRouter(Entity):
             else:
                 neighbor = packet.src
                 for dst in packet.all_dests():
-                    if packet.get_distance(dst) == self.INF:
+                    if packet.get_distance(dst) >= self.INF:
                         self.routing_table[neighbor][dst] = self.INF
                     else:
                         self.routing_table[neighbor][dst] \
